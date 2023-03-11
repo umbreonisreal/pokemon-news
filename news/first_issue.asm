@@ -26,7 +26,7 @@ NewsRootScreen: ; $0006
 	
 	db $01 ; number of strings to draw
 	dw $0029 ; offset into screen buffer
-	db "ポケモンニュース　そうかんごう@" ; string
+	db "#MON NEWS No.1@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -82,16 +82,16 @@ NewsRootScreen: ; $0006
 	end
 
 .menuItemNewsGuideText
-	db "ニュースガイド@"
+	db "NEWS GUIDE@"
 
 .menuItemTrainerRankingsText
-	db "トレーナーランキング@"
+	db "TRAINER RANKINGS@"
 
 .menuItemPokemonQuizText
-	db "ポケモンカルト@"
+	db "#MANIA QUIZ@"
 
 .menuItemQuitText
-	db "やめる@"
+	db "CANCEL@"
 
 .menuItemNewsGuideScript
 	cleartext $0105, $12, $04
@@ -114,32 +114,34 @@ NewsRootScreen: ; $0006
 	end
 
 .newsGuideText
-	text "#ニュース　そうかんごうでは"
-	line "<TRAINER>ランキングと"
-	cont "#カルトクイズで"
-	cont "おたのしみ　ください！"
+	text "We hope you enjoy"
+	line "the TRAINER RANK-"
+	cont "INGS and #MANIA"
+	cont "QUIZ in issue no.1"
 
-	para "あなた<NO>ランキング<NO>せいせきは"
-	line "ランキング<NO>こうしん<WO>すれば"
-	cont "なんどでも　かきかえられるので"
-	cont "がんばれば　トップ<NI>なれるかも！"
+	para "You can update"
+	line "your ranking"
+	cont "at any time."
+	cont "If you work hard"
+	cont "you can reach the"
+	cont "top!"
 	done
 
 .menuItemNewsGuideDescription
-	db   "よみこんだ　ニュースを"
-	line "かんたん<NI>せつめいします@"
+	db   "Read an explan-"
+	line "ation of the NEWS@"
 
 .menuItemTrainerRankingsDescription
-	db   "３つ<NO>テーマで"
-	line "ランキング<WO>します！@"
+	db   "Triple-theme"
+	line "trainer ranking!@"
 
 .menuItemPokemonQuizDescription
-	db   "これまで<NO>ぼうけん<WO>どこまで"
-	line "おもいだせるか　テストします！@"
+	db   "Test your memory"
+	line "of your adventure!@"
 
 .menuItemQuitDescription
-	db   "ニュース<WO>みるのを"
-	line "やめます@"
+	db   "Stop reading the"
+	line "NEWS.@"
 
 
 PokemonQuizScreen: ; $0172
@@ -225,16 +227,16 @@ PokemonQuizScreen: ; $0172
 	end
 
 .menuItemAnswer1Text
-	db "１ばん@"
+	db "1. @"
 
 .menuItemAnswer2Text
-	db "２ばん@"
+	db "2. @"
 
 .menuItemAnswer3Text
-	db "３ばん@"
+	db "3. @"
 
 .menuItemQuitText
-	db "やめる@"
+	db "QUIT@"
 
 .menuItemAnswer1Script
 	incval wQuizQuestionNo, $01
@@ -480,92 +482,93 @@ PokemonQuizScreen: ; $0172
 	db "@"
 	
 .question1Text
-	db   "ウツギはかせ<GA>はじめに"
-	next "えらばせてくれた　#"
-	next "まんなか<NI>いたのは？"
-	next ""
-	next "１．ワニノコ　　２．チコりータ"
-	next "３．ヒノアラシ"
-	next "@"
-	
+	db   "Who was in the"
+    next "middle #BALL at"
+    next "PROF.ELM's LAB?"
+    next "1. TOTODILE"
+    next "2. CYNDAQUIL"
+    next "3. CHIKORITA"
+    next "@"
+    
 .question2Text
-	db   "ウツギはかせ<NO>よこに"
-	next "ある　ごみばこに"
-	next "はい<TTE>　いるのは？"
-	next ""
-	next "１．たべのこし　２．ジュースのびん"
-	next "３．おかしのふくろ"
-	next "@"
-	
+    db   "What is inside"
+    next "the trash can" 
+    next "next to PROF.ELM?"
+    next "1. LEFTOVERS"
+    next "2. JUICE BOTTLE"
+    next "3. SNACK WRAPPER"
+    next "@"
+    
 .question3Text
-	db   "#<NO>つかまえかたを"
-	next "おしえて　くれる"
-	next "おにいさん<NO>りュックに"
-	next "きずくすり<WA>いくつ？"
-	next "１．１こ　　　２．２こ"
-	next "３．３こ"
-	next "@"
-	
+    db   "How many POTIONs"
+    next "did the DUDE who"
+    next "taught you to "
+    next "catch #MON have"
+    next "in his pack?"
+    next "1. 1  2. 2  3. 3"
+    next "@"
+    
 .question4Text
-	db   "おかあさんの"
-	next "とくい　りょうりは"
-	next "「グレンふう　かざん　？？？」"
-	next "「？？？」<WA>なに？"
-	next "１．ハンバーグ　　２．カレー"
-	next "３．やきそば"
-	next "@"
-	
+    db   "MOM's specialty"
+    next "dish is the"
+    next "CINNABAR VOLCANO ?"
+    next "1. BURGER"
+    next "2. CURRY"
+    next "3. NOODLES"
+    next "@"
+    
 .question5Text
-	db   "ジョバンニせんせいは"
-	next "はなしかけてから"
-	next "じゅく<NI>はいるまで"
-	next "なんかい　まわる？"
-	next "１．５かい　　　２．６かい"
-	next "３．７かい"
-	next "@"
-	
+    db   "How many times"
+    next "does EARL spin"
+    next "from talking to"
+    next "him until he goes"
+    next "into the ACADEMY?"
+    next "1. 5  2. 6  3. 7"
+    next "@"
+    
 .question6Text
-	db   "つながりのどうくつに"
-	next "おちていない　どうぐは？"
-	next ""
-	next "１．プラスパワー　２．まひなおし"
-	next "３．きずぐすり"
-	next "@"
+    db   "Which of these"
+    next "items is not found"
+    next "in UNION CAVE?"
+    next "1. X ATTACK"
+    next "2. PARLYZ HEAL"
+    next "3. POTION"
+    next "@"
 	
 .question7Text
-	db   "カモネギ<WO>つかまえるとき"
-	next "いちばん　すくない　てかずは"
-	next "なんかい　カモネギに"
-	next "はなしかければ　いい？"
-	next "１．３かい　　２．４かい"
-	next "３．５かい"
+	db   "What is the least"
+	next "amount of times"
+	next "you need to talk"
+	next "to FARFETCH'd to"
+	next "capture it?"
+	next "1. 3  2. 4  3. 5"
 	next "@"
 	
 .question8Text
-	db   "ヤドンのいどに"
-	next "ヤドン<WO>たすけ<NI>いったとき"
-	next "いど<NO>なか<NI>いるヤドンは"
-	next "なんひき　だった？"
-	next "１．２ひき　　２．３ひき"
-	next "３．４ひき"
+	db   "How many SLOWPOKE"
+	next "were in the cave"
+	next "when you rescued"
+	next "them at SLOWPOKE"
+	next "WELL?"
+	next "1. 2  2. 3  3. 4"
 	next "@"
 	
 .question9Text
-	db   "ヨシノシティ<NI>いる"
-	next "あんないじいさんは"
-	next "うみ　<WO>なんばんめに"
-	next "あんない　してくれる？"
-	next "１．３ばんめ　　２．４ばんめ"
-	next "３．５ばんめ"
+	db   "Which stop is the"
+	next "sea on the GUIDE"
+	next "GENT's tour around"
+	next "CHERRYGROVE CITY?"
+	next "1. 3rd  2. 4th "
+	next "3. 5th"
 	next "@"
 	
 .question10Text
-	db   "#じいさん<NO>いえに"
-	next "がいこく<NO>ものが"
-	next "あるけど　このなかで"
-	next "ない　ものは？"
-	next "１．コイン　　２．き<TTE>"
-	next "３．ざっし"
+	db   "Which of these"
+	next "foreign items is"
+	next "not found in MR."
+	next "#MON's HOUSE?"
+	next "1. COIN  2. STAMP"
+	next "3. MAGAZINE"
 	next "@"
 
 
@@ -623,7 +626,7 @@ QuizScoreEvaluationScreen: ; $0677
 	end
 	
 .menuItemText
-	db "オーキドはかせの　ひょうか@"
+	db "PROF.OAK's REPORT@"
 	
 .menuItemScript
 	cmpval wQuizScore, .scorelow, .scorelow, .greater, $01, $05
@@ -669,43 +672,58 @@ QuizScoreEvaluationScreen: ; $0677
 	end
 
 .menuItemDescription
-	db   "クイズ　しゅうりょう"
-	line "ひょうか<WO>うけて　ください！@"
+	db   "Take the quiz to"
+	line "receive a rating!@"
 
 .textScoreLow
-	text "ぜんぜん　まだまだ　じゃな"
-	line "これ<WA>おぼえてなくても　いいだろう"
-	cont "というような　ことまで　おぼえるのが"
-	cont "#マニアと　いうものじゃ"
+	text "You still have"
+	line "lots to do."
+	cont "It's not enough to"
+	cont "memorize things."
+
+	line "can memorize"
+	cont "things they don't"
+	cont "even need to"
+	cont "remember!"
 	done
 
 .textScoreAverage
-	text "#マニア<NI>して<WA>まだ"
-	line "ボりューム<GA>たりん！"
-	
-	para "いろいろな　ものを"
-	line "むだでも　くまなく　みるのじゃ！"
+	text "Not quite…"
+	line "#MANIACs have a"
+	cont "lot more passion!"
+
+	para "Be sure to look in"
+	line "every nook and"
+	cont "cranny!"
 	done
 
 .textScoreGood
-	text "ふむ　がんば<TTE>おるな"
-	line "それなり<NI>#マニア"
-	cont "らしく　な<TTE>きておるよ！"
-	
-	para "ともだちと　そうだん　しているかな？"
-	line "ひとりで<WA>たいへん　だからな"
+	text "Hmm…"
+	line "You're really"
+	cont "starting to earn"
+	cont "the title of" 
+	cont "#MANIAC!"
+
+	para "Are you talking"
+	line  "with your friends?"
+	cont "It's tough to" 
+	cont "do this alone!"
 	done
 
 .textScoreGreat
-	text "エクセレントじゃ！"
-	line "きみ<WA>じゅうばこ<NO>すみを"
-	cont "つつくの<GA>すき　なんじゃろ？"
+	text "Excellent!"
+	line "You really like"
+	cont "to poke around"
+	cont "in those nooks"
+	cont "and crannies,"
+	cont "don't you?"
 	done
 
 .textScoreBest
-	text "おおっ　ゆめにまで　みた"
-	line "パーフェクトな　#マニアの"
-	cont "かんせいじゃ！　<……>　おめでとう！"
+	text "Whoah! A perfect"
+	line "#MANIAC! I've"
+	cont "dreamt about this!"
+	cont "Congratulations!"
 	done
 
 
@@ -731,7 +749,7 @@ TrainerRankingsScreen: ; $0857
 	
 	db $01 ; number of strings to draw
 	db $29, $00 ; offset into screen buffer
-	db "トレーナーランキング@" ; string
+	db "TRAINER RANKING@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -787,16 +805,16 @@ TrainerRankingsScreen: ; $0857
 	end
 
 .menuItemViewRankingsText
-	db "ランキング　<WO>みる@"
+	db "VIEW RANKINGS@"
 
 .menuItemUpdateRankingsText
-	db "ランキング　<NO>こうしん@"
+	db "UPDATE RANKINGS@"
 
 .menuItemRankingsDescriptionText
-	db "ランキング　<NO>せつめい@"
-
+	db "RANKING INFO@"
+	
 .menuItemReturnText
-	db "やめる@"
+	db "CANCEL@"
 
 .menuItemViewRankingsScript
 	cmpvalram sNewsId, $0C, sNewsIdBackup, .noRankingsData, .continueToCategoriesScreen, .noRankingsData
@@ -833,21 +851,21 @@ TrainerRankingsScreen: ; $0857
 	end
 
 .rankingsUpdatedText
-	text "ランキング<NO>こうしんを"
-	line "しました！"
+	text "Rankings update"
+	line "was successful!"
 	done
 
 .rankingsUpdateCancelledText
-	text "ランキング<NO>こうしんを"
-	line "やめました"
+	text "Rankings update"
+	line "was stopped."
 	done
 
 .rankingsUpdateFailedText
-	text "ランキング<NO>こうしんに"
-	line "しっぱい⋯"
-	
-	para "あたらしい　ニュースを"
-	line "よみこんで　ください"
+	text "Rankings update"
+	line "has failed…"
+
+	para "Please download"
+	line "the latest NEWS."
 	done
 
 .menuItemRankingsDescriptionScript
@@ -861,46 +879,51 @@ TrainerRankingsScreen: ; $0857
 	end
 
 .rankingsDescriptionText
-	text "バトルタワーで　かった　かいすうは"
-	line "４０ばんどうろ<NO>バトルタワーで"
-	cont "あなた<GA>これまで<NI>なんにんの"
-	cont "<TRAINER>と<NO>しょうぶ<NI>かったか"
-	cont "にんずうで　きそいます"
-	
-	para "コイキング<NO>おおきさは"
-	line "いかりのみずうみ<NI>いる"
-	cont "つりめいじん<NI>はか<TTE>もらった"
-	cont "コイキング<NO>うち　いちばん"
-	cont "おおきかった　もので　きそいます"
-	
-	para "むしとりたいかい　こうとくてんは"
-	line "しぜんこうえんで　おこなわれる"
-	cont "むしとりたいかいで　これまでに"
-	cont "とった　いちばん　たかい"
-	cont "てんすうで　きそいます"
+	text "BATTLE TOWER"
+	line "The number of"
+	cont "#MON battles won"
+	cont "against other"
+	cont "<TRAINER>s at the"
+	cont "BATTLE TOWER on"
+	cont "ROUTE 40."
+
+	para "MAGIKARP SIZE"
+	line "The size of the"
+	cont "largest MAGIKARP"
+	cont "measured by the"
+	cont "FISHER at the"
+	cont "LAKE OF RAGE."
+
+	para "BUG-CATCHING"
+	line "The highest score"
+	cont "obtained at the"
+	cont "BUG-CATCHING Con-"
+	cont "test held in the"
+	cont "NATIONAL PARK."
 	done
 
 .noRankingsDataText
-	text "ランキングデータ<PKMN>ありません"
-	line "ランキング<NO>こうしん<WO>すれば"
-	cont "みること<GA>できます"
-	para ""
+	text "There is no"
+	line "ranking data."
+	para "Link to obtain" 
+	line "ranking data."
 	done
 
 .menuItemViewRankingsDescription
-	db   "いろいろな　ランキングが"
-	line "みれます@"
+	db   "View the various"
+	line "rankings@"
 
 .menuItemUpdateRankingsDescription
-	db   "ランキング<WO>よみこみなおします"
-	line "あなた<NO>せいせきも　かわります@"
+	db   "Reload rankings to"
+	line "update your scores@"
 
 .menuItemRankingsDescriptionDescription
-	db   "こんかい<NO>ランキングの"
-	line "テーマ<NI>ついて　せつめいします@"
+	db   "An explanation of"
+	line "the ranking themes@"
 
 .menuItemReturnDescription
-	db   "さいしょ<NO>ぺージ<NI>もどります@"
+	db   "Return to the"
+	line "first page@"
 
 
 TrainerRankingsCategoriesScreen: ; $0AF2
@@ -925,7 +948,7 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	
 	db $01 ; number of strings to draw
 	db $29, $00 ; offset into screen buffer
-	db "トレーナーランキング@" ; string
+	db "TRAINER RANKING@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -985,16 +1008,16 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	end
 	
 .menuItemBattleTowerWinsText
-	db "バトルタワーで　かった　かいすう@"
+	db "BATTLE TOWER@"
 	
 .menuItemBugCatchingContestHighScoreText
-	db "むしとりたいかい　こうとくてん@"
+	db "BUG-CATCHING@"
 	
 .menuItemLargestMagikarpText
-	db "つった　コイキング<NO>おおきさ@"
+	db "MAGIKARP SIZE@"
 	
 .menuItemReturnText
-	db "もどる@"
+	db "CANCEL@"
 
 .menuItemBattleTowerWinsScript
 	setval wRankingsTable, $00
@@ -1015,8 +1038,8 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	end
 
 .menuItemDescription
-	db   "みたい　ランキングを"
-	line "えらんで　ください@"
+	db   "Please choose a"
+	line "ranking to view@"
 
 
 TrainerRankingsTypeScreen: ; $0BC4
@@ -1100,19 +1123,19 @@ TrainerRankingsTypeScreen: ; $0BC4
 	end
 
 .menuItemNationalRankingText
-	db "ぜんこく　<NO>ランキング@"
+	db "REGIONAL RANKING@"
 
 .menuItemPrefecturalRankingText
 	text_prefecture $80
-	db "　<NO>ランキング@"
+	db " RANKINGS@"
 
 .menuItemZipCodeRankingText
 	db "■"
 	text_zip $83
-	db "　<NO>ランキング@"
+	db " RANKINGS@"
 
 .menuItemReturnText
-	db "もどる@"
+	db "CANCEL@"
 
 .menuItemNationalRankingScript
 	setval wRankingsType, $00
@@ -1139,17 +1162,17 @@ TrainerRankingsTypeScreen: ; $0BC4
 	end
 
 .menuItemDescription
-	db   "みたい　ちいき　を"
-	line "えらんで　ください@"
+	db   "Choose an area to"
+	line "view the rankings@"
 
 .battleTowerWinsText
-	db "バトルタワーで　かった　かいすう@"
+	db "BATTLE TOWER@"
 
 .bugCatchingContestHighScoreText
-	db "むしとりたいかい　こうとくてん@"
+	db "BUG-CATCHING@"
 
 .largestMagikarpText
-	db "つった　コイキング<NO>おおきさ@"
+	db "MAGIKARP SIZE@"
 
 
 TrainerRankingsRankingsScreen: ; $0CBD
@@ -1271,26 +1294,26 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db $08
 	db $02, $03, $02, $00, $00, $06, $06, $01, $18, $00, $02, $05, $05, $00, $00
 	db $50
-	db "かい@"
+	db "@"
 
 .rankingsEntryBugCatchingContestHighScoreText
 	db $15
 	db $08
 	db $02, $03, $02, $00, $00, $06, $06, $01, $18, $00, $02, $05, $05, $00, $00
 	db $50
-	db "てん@"
+	db "@"
 
 .rankingsEntryLargestMagikarpText
 	db $15
 	db $08
 	db $02, $03, $02, $00, $00, $06, $06, $01, $18, $00, $82, $04, $05, $04, $F2
 	db $50
-	db "センチ@"
+	db "@"
 
 .ownRankText
 	text_playername $00
-	db "　<NO>じゅんい@"
-
+	db "'s RANK: @"
+	
 .rankingsEntryScript
 	cmpvalram wcd22, $01, wcd5c, .somebodyRankedHere, .nobodyRankedHere, .nobodyRankedHere
 	
@@ -1307,8 +1330,8 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	end
 
 .nobodyRankedHereText
-	db   "ここに<WA>だれも"
-	next "ランクイン　してません"
+	db   "There isn't any"
+	next "ranking data."
 	para "@"
 
 .ownRankScript
@@ -1338,10 +1361,11 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	end
 
 .giftText
-	text "ランキングで　トップ<WO>とった"
-	next "あなたに⋯"
-	cont "すてきな　プレゼント<PKMN>あります"
-	cont "おたのしみに！"
+	text "For receiving a"
+	next "such a high rank,"
+	cont "we have a nice"
+	cont "gift for you."
+	cont "Enjoy!"
 	done
 
 .rankedPlayerInfoText
@@ -1363,7 +1387,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 .playerRankedText
 	text_switch $03, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
 	text_playername $00
-	db "　<NO>じゅんいは⋯"
+	db "'s RANK is…"
 	para ""
 	db $15
 	db $0F
@@ -1371,21 +1395,21 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	dw wOwnRank
 	db $04, $04, $04, $00, $00
 	db $50
-	db "　ばん　<NI>ランクイン！"
-	line "おめでとう！"
+	db   "in the rankings!"
+	line "Congratulations!"
 	para "@"
 
 .playerNotRankedText
 	text_switch $03, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
 	text_playername $00
-	db "　<NO>じゅんいは⋯"
-	para "ランクイン　しなかった⋯"
-	line "ざんねん⋯"
+	db "'s RANK is…"
+	para "Not currently in"
+	line "the rankings."
 	para "@"
 	
 .ownBattleTowerWinsText
 	text_playername $00
-	db "　<NO>せいせきは"
+	db "'s SCORE:"
 	line ""
 	db $15
 	db $0F
@@ -1397,12 +1421,12 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db $00
 	db $00
 	db $50
-	db "かい"
+	db " points"
 	para "@"
 
 .ownBugCatchingContestHighScoreText
 	text_playername $00
-	db "　<NO>せいせきは"
+	db "'s SCORE:"
 	line ""
 	db $15
 	db $0F
@@ -1414,12 +1438,12 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db $00
 	db $00
 	db $50
-	db "てん"
+	db " points"
 	para "@"
 
 .ownLargestMagikarpText
 	text_playername $00
-	db "　<NO>せいせきは"
+	db "'s SCORE:"
 	line ""
 	db $15
 	db $0F
@@ -1431,33 +1455,33 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db $04
 	db $F2
 	db $50
-	db "センチ"
+	db " cm"
 	para "@"
 	
 
 .menuItemDescription
-	db   "えらんだ　ひと<NO>プロフィールを"
-	line "みること<GA>できます@"
+	db   "View the profile"
+	line "of this TRAINER.@"
 
 .headerText1
-	db "バトルタワーで　かった　かいすう@"
+	db "BATTLE TOWER@"
 
 .headerText2
-	db "むしとりたいかい　こうとくてん@"
+	db "BUG-CATCHING@"
 
 .headerText3
-	db "つった　コイキング<NO>おおきさ@"
+	db "MAGIKARP SIZE@"
 
 .headerText4
-	db "ぜんこく　<NO>トップ１０！@"
+	db "REGIONAL TOP 10!@"
 
 .headerText5
 	text_prefecture $80
-	db "　<NO>トップ１０！@"
+	db " TOP 10!@"
 
 .headerText6
 	db "■"
 	text_zip $83
-	db "　<NO>トップ１０！@"
+	db " TOP 10!@"
 	
 	db $04 ; whatever this is supposed to be
