@@ -751,7 +751,7 @@ TrainerRankingsScreen: ; $0857
 	
 	db $01 ; number of strings to draw
 	db $29, $00 ; offset into screen buffer
-	db "TRAINER RANKING@" ; string
+	db "TRAINER RANKINGS@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
