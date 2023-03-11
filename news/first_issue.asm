@@ -591,10 +591,10 @@ QuizScoreEvaluationScreen: ; $0677
 	db $00, $00 ; offset into screen buffer
 	db "@" ; string
 	
-	db $04, $0A ; menu x, y
+	db $02, $0A ; menu x, y ; $04, $0A ; Needs to be updated with PROF.OAK's REPORT
 	db $01, $01 ; number of columns, rows
 	db $00, $00 ; column width, row height
-	db $03, $00, $00, $00, $02, $01 ; ?
+	db $01, $00, $00, $00, $00, $01 ; $03, $00, $00, $00, $02, $01 PROF OAK's REPORT location
 	
 	relativepointer .aButton ; script pointer a button
 	relativepointer .aButton ; script pointer b button
