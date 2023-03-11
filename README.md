@@ -20,7 +20,7 @@ Python and RGBDS 0.5.1 are required to build the news.
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/110418063/224471247-74d8c488-8b53-492e-9606-bf8bffcf20ff.png)
+![image](https://user-images.githubusercontent.com/110418063/224474245-8dfde40e-095e-4c0a-9d1b-dcd350587f7c.png)
 
 [pokecrystal-mobile-en]: https://github.com/gb-mobile/pokecrystal-mobile-en
 [pokecrystal]: https://github.com/pret/pokecrystal
