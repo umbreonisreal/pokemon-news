@@ -122,8 +122,9 @@ NewsRootScreen: ; $0006
 	para "You can update"
 	line "your ranking"
 	cont "at any time."
-	cont "If you work hard"
-	cont "you can reach the"
+
+	para "If you work hard"
+	line "you can reach the"
 	cont "top!"
 	done
 
@@ -539,7 +540,7 @@ PokemonQuizScreen: ; $0172
 	db   "What is the least"
 	next "amount of times"
 	next "you need to talk"
-	next "to FARFETCH'd to"
+	next "to FARFETCH'D to"
 	next "capture it?"
 	next "1. 3  2. 4  3. 5"
 	next "@"
@@ -681,7 +682,8 @@ QuizScoreEvaluationScreen: ; $0677
 	cont "It's not enough to"
 	cont "memorize things."
 
-	line "can memorize"
+	para "#MANIACs can"
+	line "memorize things"
 	cont "things they don't"
 	cont "even need to"
 	cont "remember!"
@@ -880,23 +882,29 @@ TrainerRankingsScreen: ; $0857
 
 .rankingsDescriptionText
 	text "BATTLE TOWER"
-	line "The number of"
-	cont "#MON battles won"
-	cont "against other"
-	cont "<TRAINER>s at the"
+	line ""
+	
+	para "The number of"
+	line "#MON battles"
+	cont "won against other"
+	cont "<TRAINER>S at the"
 	cont "BATTLE TOWER on"
 	cont "ROUTE 40."
 
 	para "MAGIKARP SIZE"
-	line "The size of the"
-	cont "largest MAGIKARP"
+	line ""
+	
+	para "The size of the"
+	line "largest MAGIKARP"
 	cont "measured by the"
 	cont "FISHER at the"
 	cont "LAKE OF RAGE."
 
 	para "BUG-CATCHING"
-	line "The highest score"
-	cont "obtained at the"
+	line ""
+	
+	para "The highest score"
+	line "obtained at the"
 	cont "BUG-CATCHING Con-"
 	cont "test held in the"
 	cont "NATIONAL PARK."
@@ -905,8 +913,12 @@ TrainerRankingsScreen: ; $0857
 .noRankingsDataText
 	text "There is no"
 	line "ranking data."
+	
 	para "Link to obtain" 
 	line "ranking data."
+	
+	para ""
+	line ""	
 	done
 
 .menuItemViewRankingsDescription
@@ -948,7 +960,7 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	
 	db $01 ; number of strings to draw
 	db $29, $00 ; offset into screen buffer
-	db "TRAINER RANKING@" ; string
+	db "TRAINER RANKINGS@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -1123,7 +1135,7 @@ TrainerRankingsTypeScreen: ; $0BC4
 	end
 
 .menuItemNationalRankingText
-	db "REGIONAL RANKING@"
+	db "REGIONAL RANKINGS@"
 
 .menuItemPrefecturalRankingText
 	text_prefecture $80
