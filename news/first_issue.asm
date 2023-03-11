@@ -1492,7 +1492,6 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db " TOP 10!@"
 
 .headerText6
-	db "■"
 	text_zip $83
 	db " TOP 10!@"
 	
