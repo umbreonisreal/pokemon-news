@@ -684,9 +684,8 @@ QuizScoreEvaluationScreen: ; $0677
 
 	para "#MANIACs can"
 	line "memorize things"
-	cont "things they don't"
-	cont "even need to"
-	cont "remember!"
+	cont "they don't even"
+	cont "need to remember!"
 	done
 
 .textScoreAverage
