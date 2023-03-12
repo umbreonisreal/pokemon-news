@@ -1345,8 +1345,8 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	end
 
 .nobodyRankedHereText
-	db   "There isn't any"
-	next "ranking data."
+	db   "No one is"
+	next "ranked here."
 	para "@"
 
 .ownRankScript
