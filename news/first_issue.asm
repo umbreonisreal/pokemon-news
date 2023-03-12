@@ -1384,7 +1384,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db $06
 	db $0B, $00, $04, $01, $0A, $00, $01, $03, $04, $00, $00
 	db $50
-	db "さい　"
+	db ""
 	db $15
 	db $04
 	db $07, $00, $07
