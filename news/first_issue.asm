@@ -120,8 +120,8 @@ NewsRootScreen: ; $0006
 	cont "QUIZ in issue no.1"
 
 	para "You can update"
-	line "your ranking"
-	cont "at any time."
+	line "your ranking at"
+	cont "any time."
 
 	para "If you work hard"
 	line "you can reach the"
