@@ -117,7 +117,7 @@ NewsRootScreen: ; $0006
 	text "We hope you enjoy"
 	line "the TRAINER RANK-"
 	cont "INGS and #MANIA"
-	cont "QUIZ in issue no.1"
+	cont "QUIZ in issue No.1"
 
 	para "You can update"
 	line "your ranking at"
