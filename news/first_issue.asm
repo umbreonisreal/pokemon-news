@@ -679,8 +679,9 @@ QuizScoreEvaluationScreen: ; $0677
 .textScoreLow
 	text "You still have"
 	line "lots to do."
-	cont "It's not enough to"
-	cont "memorize things."
+
+	para "It's not enough to"
+	line "memorize things."
 
 	para "#MANIACs can"
 	line "memorize things"
@@ -707,24 +708,27 @@ QuizScoreEvaluationScreen: ; $0677
 
 	para "Are you talking"
 	line  "with your friends?"
-	cont "It's tough to" 
-	cont "do this alone!"
+	
+	para "It's tough to" 
+	line "do this alone!"
 	done
 
 .textScoreGreat
-	text "Excellent!"
-	line "You really like"
-	cont "to poke around"
-	cont "in those nooks"
-	cont "and crannies,"
-	cont "don't you?"
+	text "Excellent! You"
+	line "really like to"
+	cont "poke around in"
+	
+	para "those nooks and"
+	line "crannies, don't"
+	cont "you?"
 	done
 
 .textScoreBest
 	text "Whoah! A perfect"
 	line "#MANIAC! I've"
-	cont "dreamt about this!"
-	cont "Congratulations!"
+
+	para "dreamt about this!"
+	line "Congratulations!"
 	done
 
 
