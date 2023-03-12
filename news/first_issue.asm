@@ -1378,8 +1378,9 @@ TrainerRankingsRankingsScreen: ; $0CBD
 .giftText
 	text "For receiving a"
 	next "such a high rank,"
-	cont "we have a nice"
-	cont "gift for you."
+
+	para "we have a nice"
+	next "gift for you."
 	cont "Enjoy!"
 	done
 
