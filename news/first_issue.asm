@@ -702,8 +702,9 @@ QuizScoreEvaluationScreen: ; $0677
 .textScoreGood
 	text "Hmm…"
 	line "You're really"
-	cont "starting to earn"
-	cont "the title of" 
+	
+	para "starting to earn"	
+	line "the title of" 
 	cont "#MANIAC!"
 
 	para "Are you talking"
@@ -716,15 +717,15 @@ QuizScoreEvaluationScreen: ; $0677
 .textScoreGreat
 	text "Excellent! You"
 	line "really like to"
-	cont "poke around in"
 	
-	para "those nooks and"
-	line "crannies, don't"
+	para "poke around in"
+	line "those nooks and"
+	cont "crannies, don't"
 	cont "you?"
 	done
 
 .textScoreBest
-	text "Whoah! A perfect"
+	text "Whoa! A perfect"
 	line "#MANIAC! I've"
 
 	para "dreamt about this!"
