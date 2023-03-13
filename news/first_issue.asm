@@ -1145,7 +1145,6 @@ TrainerRankingsTypeScreen: ; $0BC4
 	db " RANKINGS@"
 
 .menuItemZipCodeRankingText
-	db "■"
 	text_zip $83
 	db " RANKINGS@"
 
