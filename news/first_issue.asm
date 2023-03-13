@@ -594,7 +594,7 @@ QuizScoreEvaluationScreen: ; $0677
 	db $02, $0A ; menu x, y ; $04, $0A ; Needs to be updated with PROF.OAK's REPORT
 	db $01, $01 ; number of columns, rows
 	db $00, $00 ; column width, row height
-	db $01, $00, $00, $00, $00, $01 ; $03, $00, $00, $00, $02, $01 PROF OAK's REPORT location
+	db $01, $00, $00, $00, $02, $01 ; $03, $00, $00, $00, $02, $01 PROF OAK's REPORT location
 	
 	relativepointer .aButton ; script pointer a button
 	relativepointer .aButton ; script pointer b button
