@@ -1139,7 +1139,7 @@ TrainerRankingsTypeScreen: ; $0BC4
 	end
 
 .menuItemNationalRankingText
-	db "REGIONAL RANKINGS@"
+	db "NATIONAL RANKINGS@"
 
 .menuItemPrefecturalRankingText
 	text_prefecture $80
@@ -1489,7 +1489,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db "MAGIKARP SIZE@"
 
 .headerText4
-	db "REGIONAL TOP 10!@"
+	db "NATIONAL TOP 10!@"
 
 .headerText5
 	text_prefecture $80
