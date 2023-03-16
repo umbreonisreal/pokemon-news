@@ -895,14 +895,14 @@ TrainerRankingsScreen: ; $0857
 	cont "BATTLE TOWER on"
 	cont "ROUTE 40."
 
-	para "MAGIKARP SIZE"
+	para "LARGEST MAGIKARP"
 	line ""
 	
 	para "The size of the"
 	line "largest MAGIKARP"
 	cont "measured by the"
-	cont "FISHER at the"
-	cont "LAKE OF RAGE."
+	cont "FISHING GURU at"
+	cont "the LAKE OF RAGE."
 
 	para "BUG-CATCHING"
 	line ""
@@ -1030,7 +1030,7 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	db "BUG-CATCHING@"
 	
 .menuItemLargestMagikarpText
-	db "MAGIKARP SIZE@"
+	db "LARGEST MAGIKARP@"
 	
 .menuItemReturnText
 	db "CANCEL@"
@@ -1187,7 +1187,7 @@ TrainerRankingsTypeScreen: ; $0BC4
 	db "BUG-CATCHING@"
 
 .largestMagikarpText
-	db "MAGIKARP SIZE@"
+	db "LARGEST MAGIKARP@"
 
 
 TrainerRankingsRankingsScreen: ; $0CBD
@@ -1486,7 +1486,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db "BUG-CATCHING@"
 
 .headerText3
-	db "MAGIKARP SIZE@"
+	db "LARGEST MAGIKARP@"
 
 .headerText4
 	db "NATIONAL TOP 10!@"
