@@ -1,5 +1,4 @@
 SECTION "wram", WRAM0[$cd22] ; japan
-;SECTION "wram", WRAM0[$cd2e] ; international
 
 wcd22:: ds 1 ; cd22
 	ds 49
