@@ -1380,7 +1380,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	next "such a high rank,"
 
 	para "we have a nice"
-	next "gift for you."
+	line "gift for you."
 	cont "Enjoy!"
 	done
 
@@ -1411,7 +1411,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	dw wOwnRank
 	db $04, $04, $04, $00, $00
 	db $50
-	db   "in the rankings!"
+	db   "!"
 	line "Congratulations!"
 	para "@"
 

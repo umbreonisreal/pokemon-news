@@ -6,6 +6,6 @@ sNumBattleTowerWins:: ds 2 ; a014
 sLargestMagikarp:: ds 2 ; a07b
 	ds 2
 sBugContestHighscore:: ds 2 ; a07f
-	ds 2546
-sNewsId:: ds 12 ; aa73
-sNewsIdBackup:: ds 12 ; aa7f
+	ds 2637
+sNewsId:: ds 12 ; aace
+sNewsIdBackup:: ds 12 ; aada
