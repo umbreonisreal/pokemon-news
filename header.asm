@@ -1,12 +1,12 @@
 INCLUDE "pokecrystal/constants.asm"
 INCLUDE "macros.asm"
 international = 0
-	if international
-INCLUDE "ram/wram_int.asm"
-INCLUDE "ram/sram_int.asm"
-	else
+	if international == 0
 INCLUDE "ram/wram.asm"
 INCLUDE "ram/sram.asm"
+	else
+INCLUDE "ram/wram_int.asm"
+INCLUDE "ram/sram_int.asm"
 	endc
 
 SECTION "header", ROM0[$0000]

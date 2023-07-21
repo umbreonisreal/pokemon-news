@@ -158,7 +158,8 @@ PokemonQuizScreen: ; $0172
 	
 	db $01 ; number of strings to draw
 	dw $0029 ; offset into screen buffer
-	text_switch 10, wQuizQuestionNo, \
+	news_text_start
+	news_text_switch 10, wQuizQuestionNo, \
 		.question1Text, \
 		.question2Text, \
 		.question3Text, \
@@ -602,7 +603,7 @@ QuizScoreEvaluationScreen: ; $0677
 	dw $FFFF ; script pointer down button
 	
 	db $01 ; number of menu items
-	db $19, $01 ; screen buffer offset to print menu descriptions
+	dw $0119 ; screen buffer offset to print menu descriptions
 	db $12, $04 ; width, height of blanked area
 	
 	db $00 ; load rankings table flag (table number should be specfied in 0:CD62)
@@ -730,7 +731,7 @@ TrainerRankingsScreen: ; $0857
 	db $04 ; palette
 	
 	db $01 ; number of strings to draw
-	db $29, $00 ; offset into screen buffer
+	dw $0029 ; offset into screen buffer
 	db "トレーナーランキング@" ; string
 	
 	db $02, $05 ; menu x, y
@@ -748,7 +749,7 @@ TrainerRankingsScreen: ; $0857
 	relativepointer .downButton ; script pointer down button
 	
 	db $04 ; number of menu items
-	db $19, $01 ; screen buffer offset to print menu descriptions
+	dw $0119 ; screen buffer offset to print menu descriptions
 	db $12, $04 ; width, height of blanked area
 	
 	db $00 ; load rankings table flag (table number should be specfied in 0:CD62)
@@ -924,7 +925,7 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	db $04 ; palette
 	
 	db $01 ; number of strings to draw
-	db $29, $00 ; offset into screen buffer
+	dw $0029 ; offset into screen buffer
 	db "トレーナーランキング@" ; string
 	
 	db $02, $05 ; menu x, y
@@ -942,7 +943,7 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	relativepointer .downButton ; script pointer down button
 	
 	db $04 ; number of menu items
-	db $19, $01 ; screen buffer offset to print menu descriptions
+	dw $0119 ; screen buffer offset to print menu descriptions
 	db $12, $04 ; width, height of blanked area
 	
 	db $00 ; load rankings table flag (table number should be specfied in 0:CD62)
@@ -1040,8 +1041,9 @@ TrainerRankingsTypeScreen: ; $0BC4
 	db $04 ; palette
 	
 	db $01 ; number of strings to draw
-	db $29, $00 ; offset into screen buffer
-	text_switch $03, wRankingsCategory, .battleTowerWinsText, .bugCatchingContestHighScoreText, .largestMagikarpText
+	dw $0029 ; offset into screen buffer
+	news_text_start
+	news_text_switch 3, wRankingsCategory, .battleTowerWinsText, .bugCatchingContestHighScoreText, .largestMagikarpText
 	db "@"
 	
 	db $02, $05 ; menu x, y
@@ -1059,7 +1061,7 @@ TrainerRankingsTypeScreen: ; $0BC4
 	relativepointer .downButton ; script pointer down button
 	
 	db $04 ; number of menu items
-	db $19, $01 ; screen buffer offset to print menu descriptions
+	dw $0119 ; screen buffer offset to print menu descriptions
 	db $12, $04 ; width, height of blanked area
 	
 	db $00 ; load rankings table flag (table number should be specfied in 0:CD62)
@@ -1103,12 +1105,16 @@ TrainerRankingsTypeScreen: ; $0BC4
 	db "ぜんこく　<NO>ランキング@"
 
 .menuItemPrefecturalRankingText
-	text_prefecture $80
+	news_text_start
+	news_text_own_region_backup 0
+	news_text_end
 	db "　<NO>ランキング@"
 
 .menuItemZipCodeRankingText
 	db "■"
-	text_zip $83
+	news_text_start
+	news_text_own_zip_backup 3
+	news_text_end
 	db "　<NO>ランキング@"
 
 .menuItemReturnText
@@ -1174,10 +1180,12 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	
 	db $02 ; number of strings to draw
 	dw $0029 ; offset into screen buffer
-	text_switch $03, wRankingsCategory, .headerText1, .headerText2, .headerText3
+	news_text_start
+	news_text_switch 3, wRankingsCategory, .headerText1, .headerText2, .headerText3
 	db "@"
 	dw $0066 ; offset into screen buffer
-	text_switch $03, wRankingsType, .headerText4, .headerText5, .headerText6
+	news_text_start
+	news_text_switch 3, wRankingsType, .headerText4, .headerText5, .headerText6
 	db "@"
 	
 	db $02, $07 ; menu x, y
@@ -1263,32 +1271,38 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	end
 
 .rankingsEntryText
-	text_switch $03, wRankingsCategory, .rankingsEntryBattleTowerWinsText, .rankingsEntryBugCatchingContestHighScoreText, .rankingsEntryLargestMagikarpText
-	db "@"
+	news_text_start
+	news_text_switch 3, wRankingsCategory, .rankingsEntryBattleTowerWinsText, .rankingsEntryBugCatchingContestHighScoreText, .rankingsEntryLargestMagikarpText
+	news_text_end
 
 .rankingsEntryBattleTowerWinsText
-	db $15
-	db $08
-	db $02, $03, $02, $00, $00, $06, $06, $01, $18, $00, $02, $05, $05, $00, $00
-	db $50
+	news_text_start
+	news_text_ranking_indicator 3
+	news_text_ranking_text 0, 6, 6
+	news_text_ranking_number 24, 2, 5, 5, 0, 0
+	news_text_end
 	db "かい@"
 
 .rankingsEntryBugCatchingContestHighScoreText
-	db $15
-	db $08
-	db $02, $03, $02, $00, $00, $06, $06, $01, $18, $00, $02, $05, $05, $00, $00
-	db $50
+	news_text_start
+	news_text_ranking_indicator 3
+	news_text_ranking_text 0, 6, 6
+	news_text_ranking_number 24, 2, 5, 5, 0, 0
+	news_text_end
 	db "てん@"
 
 .rankingsEntryLargestMagikarpText
-	db $15
-	db $08
-	db $02, $03, $02, $00, $00, $06, $06, $01, $18, $00, $82, $04, $05, $04, $F2
-	db $50
+	news_text_start
+	news_text_ranking_indicator 3
+	news_text_ranking_text 0, 6, 6
+	news_text_ranking_number 24, 2 | PRINTNUM_LEADINGZEROS, 4, 5, 4, "<DOT>"
+	news_text_end
 	db "センチ@"
 
 .ownRankText
-	text_playername $00
+	news_text_start
+	news_text_own_name 0
+	news_text_end
 	db "　<NO>じゅんい@"
 
 .rankingsEntryScript
@@ -1345,92 +1359,81 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	done
 
 .rankedPlayerInfoText
-	db $15
-	db $06
-	db $0B, $00, $04, $01, $0A, $00, $01, $03, $04, $00, $00
-	db $50
+	news_text_start
+	news_text_ranking_gender 11, 4
+	news_text_ranking_number 10, 1, 3, 4, 0, 0
+	news_text_end
 	db "さい　"
-	db $15
-	db $04
-	db $07, $00, $07
-	db $50
+	news_text_start
+	news_text_ranking_region 7, 7
+	news_text_end
 	para "@"
 
 .rankedPlayerMessage
-	text_easychat $000C
+	news_text_start
+	news_text_ranking_message 12
+	news_text_end
 	para "@"
 
 .playerRankedText
-	text_switch $03, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
-	text_playername $00
+	news_text_start
+	news_text_switch 3, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
+	news_text_start
+	news_text_own_name 0
+	news_text_end
 	db "　<NO>じゅんいは⋯"
 	para ""
-	db $15
-	db $0F
-	db BANK(wOwnRank)
-	dw wOwnRank
-	db $04, $04, $04, $00, $00
-	db $50
+	news_text_start
+	news_text_number wOwnRank, 4, 4, 4, 0, 0
+	news_text_end
 	db "　ばん　<NI>ランクイン！"
 	line "おめでとう！"
 	para "@"
 
 .playerNotRankedText
-	text_switch $03, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
-	text_playername $00
+	news_text_start
+	news_text_switch 3, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
+	news_text_start
+	news_text_own_name 0
+	news_text_end
 	db "　<NO>じゅんいは⋯"
 	para "ランクイン　しなかった⋯"
 	line "ざんねん⋯"
 	para "@"
 	
 .ownBattleTowerWinsText
-	text_playername $00
+	news_text_start
+	news_text_own_name 0
+	news_text_end
 	db "　<NO>せいせきは"
 	line ""
-	db $15
-	db $0F
-	db BANK(sNumBattleTowerWins)
-	dw sNumBattleTowerWins
-	db $02
-	db $05
-	db $05
-	db $00
-	db $00
-	db $50
+	news_text_start
+	news_text_number sNumBattleTowerWins, 2, 5, 5, 0, 0
+	news_text_end
 	db "かい"
 	para "@"
 
 .ownBugCatchingContestHighScoreText
-	text_playername $00
+	news_text_start
+	news_text_own_name 0
+	news_text_end
 	db "　<NO>せいせきは"
 	line ""
-	db $15
-	db $0F
-	db BANK(sBugContestHighscore)
-	dw sBugContestHighscore
-	db $02
-	db $05
-	db $05
-	db $00
-	db $00
-	db $50
+	news_text_start
+	news_text_number sBugContestHighscore, 2, 5, 5, 0, 0
+	news_text_end
 	db "てん"
 	para "@"
 
 .ownLargestMagikarpText
-	text_playername $00
+	news_text_start
+	news_text_own_name 0
+	news_text_end
 	db "　<NO>せいせきは"
 	line ""
-	db $15
-	db $0F
-	db BANK(sLargestMagikarp)
-	dw sLargestMagikarp
-	db $82
-	db $04
-	db $05
-	db $04
-	db $F2
-	db $50
+	news_text_start
+	news_text_number sLargestMagikarp, 2 | PRINTNUM_LEADINGZEROS, 4, 5, 4, "<DOT>"
+	news_text_end
 	db "センチ"
 	para "@"
 	
@@ -1452,12 +1455,16 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db "ぜんこく　<NO>トップ１０！@"
 
 .headerText5
-	text_prefecture $80
+	news_text_start
+	news_text_own_region_backup 0
+	news_text_end
 	db "　<NO>トップ１０！@"
 
 .headerText6
 	db "■"
-	text_zip $83
+	news_text_start
+	news_text_own_zip_backup 3
+	news_text_end
 	db "　<NO>トップ１０！@"
 	
 	db $04 ; whatever this is supposed to be
