@@ -1324,7 +1324,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 .rankingsEntryBugCatchingContestHighScoreText
 	news_text_start
 	news_text_ranking_indicator 3
-	news_text_ranking_text 0, 6, 6
+	news_text_ranking_text 0, 7, 7
 	news_text_ranking_number 24, 2, 5, 5, 0, 0
 	news_text_end
 	db "@"
@@ -1332,7 +1332,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 .rankingsEntryLargestMagikarpText
 	news_text_start
 	news_text_ranking_indicator 3
-	news_text_ranking_text 0, 6, 6
+	news_text_ranking_text 0, 7, 7
 	news_text_ranking_number 24, 2 | PRINTNUM_LEADINGZEROS, 4, 5, 4, "<DOT>"
 	news_text_end
 	db "@"
