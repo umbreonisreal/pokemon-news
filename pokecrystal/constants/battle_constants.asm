@@ -1,31 +1,31 @@
 ; significant level values
-MAX_LEVEL EQU 100
-MIN_LEVEL EQU 2
-EGG_LEVEL EQU 5
+DEF MAX_LEVEL EQU 100
+DEF MIN_LEVEL EQU 2
+DEF EGG_LEVEL EQU 5
 
 ; maximum moves known per mon
-NUM_MOVES EQU 4
+DEF NUM_MOVES EQU 4
 
 ; significant stat values
-BASE_STAT_LEVEL EQU 7
-MAX_STAT_LEVEL EQU 13
-
-; minimum damage before type effectiveness
-MIN_NEUTRAL_DAMAGE EQU 2
+DEF BASE_STAT_LEVEL EQU 7
+DEF MAX_STAT_LEVEL EQU 13
 
 ; turns that sleep lasts
-REST_SLEEP_TURNS EQU 2
-TREEMON_SLEEP_TURNS EQU 7
+DEF REST_SLEEP_TURNS EQU 2
+DEF TREEMON_SLEEP_TURNS EQU 7
 
 ; default move priority
-BASE_PRIORITY EQU 1
+DEF BASE_PRIORITY EQU 1
 
 ; type effectiveness factors, scaled by 10
-SUPER_EFFECTIVE    EQU 20
-MORE_EFFECTIVE     EQU 15
-EFFECTIVE          EQU 10
-NOT_VERY_EFFECTIVE EQU 05
-NO_EFFECT          EQU 00
+DEF SUPER_EFFECTIVE    EQU 20
+DEF MORE_EFFECTIVE     EQU 15
+DEF EFFECTIVE          EQU 10
+DEF NOT_VERY_EFFECTIVE EQU 05
+DEF NO_EFFECT          EQU 00
+
+; enemy AI behavior
+DEF BASE_AI_SWITCH_SCORE EQU 10
 
 ; wPlayerStatLevels and wEnemyStatLevels indexes (see wram.asm)
 ; GetStatName arguments (see data/battle/stat_names.asm)
@@ -38,43 +38,43 @@ NO_EFFECT          EQU 00
 	const ACCURACY
 	const EVASION
 	const ABILITY ; used for BattleCommand_Curse
-NUM_LEVEL_STATS EQU const_value
+DEF NUM_LEVEL_STATS EQU const_value
 
 ; move struct members (see data/moves/moves.asm)
-	const_def
-	const MOVE_ANIM   ; 0
-	const MOVE_EFFECT ; 1
-	const MOVE_POWER  ; 2
-	const MOVE_TYPE   ; 3
-	const MOVE_ACC    ; 4
-	const MOVE_PP     ; 5
-	const MOVE_CHANCE ; 6
-MOVE_LENGTH EQU const_value
+rsreset
+DEF MOVE_ANIM   rb ; 0
+DEF MOVE_EFFECT rb ; 1
+DEF MOVE_POWER  rb ; 2
+DEF MOVE_TYPE   rb ; 3
+DEF MOVE_ACC    rb ; 4
+DEF MOVE_PP     rb ; 5
+DEF MOVE_CHANCE rb ; 6
+DEF MOVE_LENGTH EQU _RS
 
 ; stat constants
 ; indexes for:
 ; - wPlayerStats and wEnemyStats (see wram.asm)
-; - party_struct and battle_struct members (see macros/wram.asm)
+; - party_struct and battle_struct members (see macros/ram.asm)
 	const_def 1
 	const STAT_HP
 	const STAT_ATK
 	const STAT_DEF
 	const STAT_SPD
 	const STAT_SATK
-NUM_EXP_STATS EQU const_value + -1
+DEF NUM_EXP_STATS EQU const_value - 1
 	const STAT_SDEF
-NUM_STATS EQU const_value + -1
-NUM_BATTLE_STATS EQU NUM_STATS + -1 ; don't count HP
+DEF NUM_STATS EQU const_value - 1
+DEF NUM_BATTLE_STATS EQU NUM_STATS - 1 ; don't count HP
 
 ; stat formula constants
-STAT_MIN_NORMAL EQU 5
-STAT_MIN_HP EQU 10
+DEF STAT_MIN_NORMAL EQU 5
+DEF STAT_MIN_HP EQU 10
 
-MAX_STAT_VALUE EQU 999
+DEF MAX_STAT_VALUE EQU 999
 
 ; shiny dvs
-ATKDEFDV_SHINY EQU $EA
-SPDSPCDV_SHINY EQU $AA
+DEF ATKDEFDV_SHINY EQU $EA
+DEF SPDSPCDV_SHINY EQU $AA
 
 ; battle classes (wBattleMode values)
 	const_def 1
@@ -97,7 +97,7 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_CELEBI
 	const BATTLETYPE_SUICUNE
 
-; BattleVarPairs indexes (see home/battle.asm)
+; BattleVarPairs indexes (see home/battle_vars.asm)
 	const_def
 	const BATTLE_VARS_SUBSTATUS1
 	const BATTLE_VARS_SUBSTATUS2
@@ -120,8 +120,9 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	const BATTLE_VARS_LAST_MOVE
 	const BATTLE_VARS_LAST_MOVE_OPP
+DEF NUM_BATTLE_VARS EQU const_value
 
-; BattleVarLocations indexes (see home/battle.asm)
+; BattleVarLocations indexes (see home/battle_vars.asm)
 	const_def
 	const PLAYER_SUBSTATUS_1
 	const ENEMY_SUBSTATUS_1
@@ -149,71 +150,74 @@ SPDSPCDV_SHINY EQU $AA
 	const ENEMY_COUNTER_MOVE
 	const PLAYER_LAST_MOVE
 	const ENEMY_LAST_MOVE
+assert const_value % 2 == 0
+DEF NUM_BATTLE_VAR_LOCATION_PAIRS EQU const_value / 2
 
 ; status condition bit flags
-SLP EQU %111 ; 0-7 turns
+DEF SLP_MASK EQU %111 ; 0-7 turns
 	const_def 3
 	const PSN
 	const BRN
 	const FRZ
 	const PAR
 
-ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
+DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 
 ; wPlayerSubStatus1 or wEnemySubStatus1 bit flags
-	enum_start 7, -1
-	enum SUBSTATUS_IN_LOVE
-	enum SUBSTATUS_ROLLOUT
-	enum SUBSTATUS_ENDURE
-	enum SUBSTATUS_PERISH
-	enum SUBSTATUS_IDENTIFIED
-	enum SUBSTATUS_PROTECT
-	enum SUBSTATUS_CURSE
-	enum SUBSTATUS_NIGHTMARE
+	const_def
+	const SUBSTATUS_NIGHTMARE
+	const SUBSTATUS_CURSE
+	const SUBSTATUS_PROTECT
+	const SUBSTATUS_IDENTIFIED
+	const SUBSTATUS_PERISH
+	const SUBSTATUS_ENDURE
+	const SUBSTATUS_ROLLOUT
+	const SUBSTATUS_IN_LOVE
 
 ; wPlayerSubStatus2 or wEnemySubStatus2 bit flags
-SUBSTATUS_CURLED EQU 0
+	const_def
+	const SUBSTATUS_CURLED
 
 ; wPlayerSubStatus3 or wEnemySubStatus3 bit flags
-	enum_start 7, -1
-	enum SUBSTATUS_CONFUSED
-	enum SUBSTATUS_FLYING
-	enum SUBSTATUS_UNDERGROUND
-	enum SUBSTATUS_CHARGED
-	enum SUBSTATUS_FLINCHED
-	enum SUBSTATUS_IN_LOOP
-	enum SUBSTATUS_RAMPAGE
-	enum SUBSTATUS_BIDE
+	const_def
+	const SUBSTATUS_BIDE
+	const SUBSTATUS_RAMPAGE
+	const SUBSTATUS_IN_LOOP
+	const SUBSTATUS_FLINCHED
+	const SUBSTATUS_CHARGED
+	const SUBSTATUS_UNDERGROUND
+	const SUBSTATUS_FLYING
+	const SUBSTATUS_CONFUSED
 
 ; wPlayerSubStatus4 or wEnemySubStatus4 bit flags
-	enum_start 7, -1
-	enum SUBSTATUS_LEECH_SEED
-	enum SUBSTATUS_RAGE
-	enum SUBSTATUS_RECHARGE
-	enum SUBSTATUS_SUBSTITUTE
-	enum SUBSTATUS_UNKNOWN_1
-	enum SUBSTATUS_FOCUS_ENERGY
-	enum SUBSTATUS_MIST
-	enum SUBSTATUS_X_ACCURACY
+	const_def
+	const SUBSTATUS_X_ACCURACY
+	const SUBSTATUS_MIST
+	const SUBSTATUS_FOCUS_ENERGY
+	const_skip
+	const SUBSTATUS_SUBSTITUTE
+	const SUBSTATUS_RECHARGE
+	const SUBSTATUS_RAGE
+	const SUBSTATUS_LEECH_SEED
 
 ; wPlayerSubStatus5 or wEnemySubStatus5 bit flags
-	enum_start 7, -1
-	enum SUBSTATUS_CANT_RUN
-	enum SUBSTATUS_DESTINY_BOND
-	enum SUBSTATUS_LOCK_ON
-	enum SUBSTATUS_ENCORED
-	enum SUBSTATUS_TRANSFORMED
-	enum SUBSTATUS_UNKNOWN_2
-	enum SUBSTATUS_UNKNOWN_3
-	enum SUBSTATUS_TOXIC
+	const_def
+	const SUBSTATUS_TOXIC
+	const_skip
+	const_skip
+	const SUBSTATUS_TRANSFORMED
+	const SUBSTATUS_ENCORED
+	const SUBSTATUS_LOCK_ON
+	const SUBSTATUS_DESTINY_BOND
+	const SUBSTATUS_CANT_RUN
 
 ; wPlayerScreens or wEnemyScreens bit flags
-	enum_start 4, -1
-	enum SCREENS_REFLECT
-	enum SCREENS_LIGHT_SCREEN
-	enum SCREENS_SAFEGUARD
-	enum SCREENS_UNUSED
-	enum SCREENS_SPIKES
+	const_def
+	const SCREENS_SPIKES
+	const_skip
+	const SCREENS_SAFEGUARD
+	const SCREENS_LIGHT_SCREEN
+	const SCREENS_REFLECT
 
 ; values in wBattleWeather
 	const_def
@@ -237,9 +241,9 @@ SUBSTATUS_CURLED EQU 0
 	const BATTLEACTION_SWITCH4
 	const BATTLEACTION_SWITCH5
 	const BATTLEACTION_SWITCH6
-	const BATTLEACTION_A
-	const BATTLEACTION_B
-	const BATTLEACTION_C
+	const_skip
+	const_skip
+	const_skip
 	const BATTLEACTION_SKIPTURN
 	const BATTLEACTION_STRUGGLE
 	const BATTLEACTION_FORFEIT
@@ -256,6 +260,10 @@ SUBSTATUS_CURLED EQU 0
 	const LOSE
 	const DRAW
 
-BATTLERESULT_CAUGHT_CELEBI EQU 6
-BATTLERESULT_BOX_FULL EQU 7
-BATTLERESULT_BITMASK EQU (1 << BATTLERESULT_CAUGHT_CELEBI) | (1 << BATTLERESULT_BOX_FULL)
+DEF BATTLERESULT_CAUGHT_CELEBI EQU 6
+DEF BATTLERESULT_BOX_FULL EQU 7
+DEF BATTLERESULT_BITMASK EQU (1 << BATTLERESULT_CAUGHT_CELEBI) | (1 << BATTLERESULT_BOX_FULL)
+
+; link_battle_record struct
+DEF LINK_BATTLE_RECORD_LENGTH EQU 2 + (NAME_LENGTH - 1) + 2 * 3
+DEF NUM_LINK_BATTLE_RECORDS EQU 5

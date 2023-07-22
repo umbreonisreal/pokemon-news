@@ -1,12 +1,26 @@
+Disassembly of Pokemon Crystal's Pokemon News.
+
+So far, only one of the four known news issues is disassembled.
+The pokecrystal directory contains some useful constants and macros sourced from [pokecrystal].
+
+To use this, install python and the tools required for assembling [pokecrystal].
+
+[pokecrystal]: https://github.com/pret/pokecrystal
+
+
 ## Information 
 
-A WIP fork of a disassembly of Pokémon Crystal's Pokemon News by Sudel-Matze.
-
-Matze's initial repository contained a disassembly for one of the four known Pokémon News files. (Specifically 'news2.bin')
+A disassembly of Pokémon Crystal's debug Pokemon News by Sudel-Matze.
 
 The Pokémon News was distributed via the Mobile Adapter and obtained via the in-game news machine - a feature originally only available to the Japanese version of the game.
 
-This fork is designed to translate the news into English and to be used for the [pokecrystal-mobile-en] project.
+This repository can be used to build the news in both Japanese (original) and English (for the [pokecrystal-mobile-en] project).
+
+To build a specific version, run one of these commands:
+
+- JP Version:   `make`
+
+- EN Version:	`make news_en` 
 
 
 More information about Pokémon Crystal's mobile features can be found here:
@@ -15,7 +29,7 @@ More information about Pokémon Crystal's mobile features can be found here:
 
 The pokecrystal directory contains some useful constants and macros sourced from [pokecrystal].
 
-Python and RGBDS 0.5.1 are required to build the news.
+Python and RGBDS 0.6.0 are required to build the news.
 
 
 ## Screenshots

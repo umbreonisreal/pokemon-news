@@ -1,4 +1,4 @@
-screenconfig: MACRO
+MACRO screenconfig
 .curr_screen
 ENDM
 
@@ -74,6 +74,6 @@ ENDM
 ;ENDR
 ;ENDM
 
-relativepointer: MACRO
+MACRO relativepointer
 	dw \1 - .curr_screen
 ENDM

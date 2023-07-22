@@ -1,4 +1,4 @@
-INCLUDE "pokecrystal/macros/enum.asm"
+INCLUDE "pokecrystal/macros/const.asm"
 INCLUDE "pokecrystal/macros/data.asm"
 INCLUDE "pokecrystal/macros/gfx.asm"
 
