@@ -33,6 +33,10 @@ Python and RGBDS 0.6.0 are required to build the news.
 
 
 ## Screenshots
+![image](https://github.com/gb-mobile/pokecrystal-news-en/assets/110418063/63d982ed-daa5-4b8b-9be3-36e51c672614)
+![image](https://github.com/gb-mobile/pokecrystal-news-en/assets/110418063/8b903cec-7b93-45a1-90b3-0776866676a2)
+![image](https://github.com/gb-mobile/pokecrystal-news-en/assets/110418063/18b5643a-d8e3-457e-92bf-6f3ce843260b)
+
 
 ![image](https://user-images.githubusercontent.com/110418063/224474245-8dfde40e-095e-4c0a-9d1b-dcd350587f7c.png)
 ![image](https://user-images.githubusercontent.com/110418063/224476334-51b2bcee-6303-4423-babc-83039f2e41fe.png)
@@ -41,3 +45,8 @@ Python and RGBDS 0.6.0 are required to build the news.
 
 [pokecrystal-mobile-en]: https://github.com/gb-mobile/pokecrystal-mobile-en
 [pokecrystal]: https://github.com/pret/pokecrystal
+
+## Credits
+- Matze          : Code & Disassembly
+- Ryuzac         : Translation
+- DS             : Code & Localization
