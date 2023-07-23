@@ -1,13 +1,12 @@
 INCLUDE "pokecrystal/constants.asm"
 INCLUDE "macros.asm"
-international = 0
-	if international == 0
-INCLUDE "ram/wram.asm"
-INCLUDE "ram/sram.asm"
-	else
+IF DEF(_NEWS_EN)
 INCLUDE "ram/wram_int.asm"
 INCLUDE "ram/sram_int.asm"
-	endc
+ELSE
+INCLUDE "ram/wram.asm"
+INCLUDE "ram/sram.asm"
+ENDC
 
 SECTION "header", ROM0[$0000]
 	db $00

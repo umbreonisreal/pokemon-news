@@ -1,5 +1,8 @@
+IF DEF(_NEWS_EN)
+INCLUDE "pokecrystal/charmap_int.asm"
+ELSE	
 INCLUDE "pokecrystal/charmap.asm"
-
+ENDC
 INCLUDE "pokecrystal/macros.asm"
 
 INCLUDE "pokecrystal/constants/hardware_constants.asm"
