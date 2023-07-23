@@ -34,7 +34,7 @@ first_issue:
 	python fix.py $@.bin
 	
 first_issue_en:
-	$(RGBASM) -o news_en/$@.o "news_en/$@.asm"
+	$(RGBASM) -D _NEWS_EN -o news_en/$@.o "news_en/$@.asm"
 	$(RGBLINK) -x -o $@.bin news_en/$@.o
 	python fix.py $@.bin
 
