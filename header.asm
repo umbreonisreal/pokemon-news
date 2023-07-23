@@ -8,7 +8,6 @@ INCLUDE "ram/wram.asm"
 INCLUDE "ram/sram.asm"
 ENDC
 
-
 SECTION "header", ROM0[$0000]
 	db $00
 	db $A0
