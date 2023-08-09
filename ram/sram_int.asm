@@ -1,6 +1,11 @@
+SECTION "SRAM bank 2", SRAM, BANK[1]
+	ds $1e3b
+sMobileEventIndex:: db ; 3e3c
+	ds 10
+sMobileEventIndexBackup:: db ; 3e47
+
 SECTION "SRAM bank 5",  SRAM, BANK[5]
-sMobileEventIndex::	ds 1 ; a000
-	ds 19
+	ds 20
 sNumBattleTowerWins:: ds 2 ; a014
 	ds 101
 sLargestMagikarp:: ds 2 ; a07b
