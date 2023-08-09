@@ -1,5 +1,5 @@
 SECTION "SRAM bank 1", SRAM, BANK[1]
-	ds $1e3b
+	ds $1e3c
 sMobileEventIndex:: db ; 3e3c
 	ds 10
 sMobileEventIndexBackup:: db ; 3e47
