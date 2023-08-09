@@ -1,4 +1,4 @@
-SECTION "SRAM bank 2", SRAM, BANK[1]
+SECTION "SRAM bank 1", SRAM, BANK[1]
 	ds $1e3b
 sMobileEventIndex:: db ; 3e3c
 	ds 10
