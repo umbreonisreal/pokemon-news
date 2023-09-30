@@ -1,5 +1,7 @@
 IF DEF(_NEWS_EN)
-INCLUDE "pokecrystal/charmap_int.asm"
+INCLUDE "pokecrystal/charmap_en.asm"
+ELIF DEF(_NEWS_DE)
+INCLUDE "pokecrystal/charmap_de.asm"
 ELSE	
 INCLUDE "pokecrystal/charmap.asm"
 ENDC
