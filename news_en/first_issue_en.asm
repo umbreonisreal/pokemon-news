@@ -678,10 +678,7 @@ QuizScoreEvaluationScreen: ; $0677
 	line "receive a rating!@"
 
 .textScoreLow
-	text "You still have"
-	line "lots to do."
-
-	para "It's not enough to"
+	text "It's not enough to"
 	line "memorize things."
 
 	para "#MANIACs can"
@@ -691,8 +688,10 @@ QuizScoreEvaluationScreen: ; $0677
 	done
 
 .textScoreAverage
-	text "Not quite…"
-	line "#MANIACs have a"
+	text "You still have"
+	line "lots to do."
+
+	cont "#MANIACs have a"
 	cont "lot more passion!"
 
 	para "Be sure to look in"
@@ -701,11 +700,12 @@ QuizScoreEvaluationScreen: ; $0677
 	done
 
 .textScoreGood
-	text "Hmm…"
-	line "You're really"
+	text "You're trying--I"
+	line "can see that."
 	
-	para "starting to earn"	
-	line "the title of" 
+	para "You're really"
+	line "starting to earn"	
+	cont "the title of" 
 	cont "#MANIAC!"
 
 	para "Are you talking"

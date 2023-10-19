@@ -682,10 +682,7 @@ QuizScoreEvaluationScreen: ; $0677
 	line "deiner Antworten!@"
 
 .textScoreLow
-	text "Du hast noch viel"
-	line "Arbeit vor dir."
-	
-	para "Es genügt nicht,"
+	text "Es genügt nicht,"
 	line "Dinge bloß aus-"
 	cont "wendig zu lernen."
 	
@@ -696,9 +693,12 @@ QuizScoreEvaluationScreen: ; $0677
 	done
 
 .textScoreAverage
-	text "Leider nicht ganz…"
-	line "Echte #MANIACs"
-	cont "sind da noch mehr"
+	text "Du hast noch eine"
+	line "Menge Arbeit vor"
+	cont "Dir."
+	
+	para "Echte #MANIACs"
+	line "sind da noch mehr"
 	cont "bei der Sache!"
 	
 	para "Sieh dich genau"
@@ -707,9 +707,8 @@ QuizScoreEvaluationScreen: ; $0677
 	done
 
 .textScoreGood
-	text "Hmm… Das war gar"
-	line "nicht schlecht."
-	
+	text "Du gibst dir Mühe."
+	line ""
 	para "Du bist fast"
 	line "schon sowas wie"
 	cont "ein #MANIAC!"
