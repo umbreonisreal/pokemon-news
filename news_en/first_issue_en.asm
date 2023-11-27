@@ -485,8 +485,8 @@ PokemonQuizScreen: ; $0172
 	
 .question1Text
 	db   "Who was in the"
-    next "middle #BALL at"
-    next "PROF.ELM's LAB?"
+    next "middle # BALL"
+    next "at PROF.ELM's LAB?"
     next "1. TOTODILE"
     next "2. CYNDAQUIL"
     next "3. CHIKORITA"
