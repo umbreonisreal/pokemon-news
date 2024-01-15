@@ -695,7 +695,7 @@ QuizScoreEvaluationScreen: ; $0677
 .textScoreAverage
 	text "Du hast noch eine"
 	line "Menge Arbeit vor"
-	cont "Dir."
+	cont "dir."
 	
 	para "Echte #MANIACs"
 	line "sind da noch mehr"
