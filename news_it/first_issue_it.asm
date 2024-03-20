@@ -26,7 +26,7 @@ NewsRootScreen: ; $0006
 	
 	db $01 ; number of strings to draw
 	dw $0029 ; offset into screen buffer
-	db "#MON NEWS No.1@" ; string
+	db "NOTIZIE PKMN Nº1@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -82,16 +82,16 @@ NewsRootScreen: ; $0006
 	end
 
 .menuItemNewsGuideText
-	db "NEWS GUIDE@"
+	db "GUIDA NOTIZIE@"
 
 .menuItemTrainerRankingsText
-	db "TRAINER RANKINGS@"
+	db "CLASSIFICA ALLEN.@"
 
 .menuItemPokemonQuizText
-	db "#MANIA QUIZ@"
+	db "QUIZ #FANATICO@"
 
 .menuItemQuitText
-	db "CANCEL@"
+	db "ESCI@"
 
 .menuItemNewsGuideScript
 	cleartext $0105, $12, $04
@@ -114,35 +114,39 @@ NewsRootScreen: ; $0006
 	end
 
 .newsGuideText
-	text "We hope you enjoy"
-	line "the TRAINER RANK-"
-	cont "INGS and #MANIA"
-	cont "QUIZ in issue No.1"
+	text "Ci auguriamo che"
+	line "la CLASS. ALLENATORI"
+	para "ALLENATORI e il"
+	line "QUIZ #MANIA"
+	para "nella prima"
+	line "edizione ti"
+	cont "piacciano."
 
-	para "You can update"
-	line "your ranking at"
-	cont "any time."
+	para "Puoi aggiornare"
+	line "la classifica"
+	cont "quando vuoi."
 
-	para "If you work hard"
-	line "you can reach the"
-	cont "top!"
+	para "Se lavori sodo,"
+	line "raggiungerai la"
+	cont "vetta!"
 	done
 
 .menuItemNewsGuideDescription
-	db   "Read an explan-"
-	line "ation of the NEWS@"
+	db   "Leggi una spiega-"
+	line "zione delle@"
+	cont "NOTIZIE."
 
 .menuItemTrainerRankingsDescription
-	db   "Triple-theme"
-	line "trainer ranking!@"
+	db   "Classifiche allen-"
+	line "atore a tema @"
 
 .menuItemPokemonQuizDescription
 	db   "Test your memory"
 	line "of your adventure!@"
 
 .menuItemQuitDescription
-	db   "Stop reading the"
-	line "NEWS.@"
+	db   "Stop lettura"
+	line "NOTIZIE.@"
 
 
 PokemonQuizScreen: ; $0172
@@ -238,7 +242,7 @@ PokemonQuizScreen: ; $0172
 	db "3. @"
 
 .menuItemQuitText
-	db "QUIT@"
+	db "ESCI@"
 
 .menuItemAnswer1Script
 	incval wQuizQuestionNo, $01
@@ -484,93 +488,93 @@ PokemonQuizScreen: ; $0172
 	db "@"
 	
 .question1Text
-	db   "Who was in the"
-    next "middle # BALL"
-    next "at PROF.ELM's LAB?"
+	db   "Chi c'era nella"
+    next "#BALL centrale"
+    next "del LABORATORIO"
+	next "del PROF.ELM?"
     next "1. TOTODILE"
     next "2. CYNDAQUIL"
     next "3. CHIKORITA"
     next "@"
     
 .question2Text
-    db   "What is inside"
-    next "the trash can" 
-    next "next to PROF.ELM?"
-    next "1. LEFTOVERS"
-    next "2. JUICE BOTTLE"
-    next "3. SNACK WRAPPER"
+    db   "Cosa c'è nel"
+    next "cestino vicino" 
+    next "al PROF. ELM?"
+    next "1. AVANZI"
+    next "2. BOTTIGLIA VUOTA"
+    next "3. CARTA SNACK"
     next "@"
     
 .question3Text
-    db   "How many POTIONs"
-    next "did the DUDE who"
-    next "taught you to "
-    next "catch #MON have"
-    next "in his pack?"
+    db   "Quante POZIONI"
+    next "aveva nello ZAINO"
+    next "l'AMICO che ti ha"
+    next "ha insegnato a"
+    next "catturare #MON?"
     next "1. 1  2. 2  3. 3"
     next "@"
     
 .question4Text
-    db   "MOM's specialty"
-    next "dish is the"
-    next "CINNABAR VOLCANO ?"
-    next "1. BURGER"
+    db   "La specialità di"
+    next "MAMMA è … DELL'"
+    next "ISOLA CANNELLA?"
+    next "1. MINESTRONE"
     next "2. CURRY"
-    next "3. NOODLES"
+    next "3. NOODLE"
     next "@"
     
 .question5Text
-    db   "How many times"
-    next "does EARL spin"
-    next "from talking to"
-    next "him until he goes"
-    next "into the ACADEMY?"
+    db   "Quante volte gira"
+    next "PRIMO da quando"
+    next "gli parli a quando"
+    next "va nell'ACCADEMIA?"
     next "1. 5  2. 6  3. 7"
     next "@"
     
 .question6Text
-    db   "Which of these"
-    next "items is not found"
-    next "in UNION CAVE?"
-    next "1. X ATTACK"
-    next "2. PARLYZ HEAL"
-    next "3. POTION"
+    db   "Quale oggetto"
+    next "non è nella"
+    next "GROTTA DI MEZZO?"
+    next "1. ATTACCO"
+    next "2. ANTIPARALISI"
+    next "3. POZIONE"
     next "@"
 	
 .question7Text
-	db   "What is the least"
-	next "amount of times"
-	next "you need to talk"
-	next "to FARFETCH'D to"
-	next "capture it?"
+	db   "Qual è il numero"
+	next "minimo di volte in"
+	next "cui devi parlare"
+	next "a FARFETCH'D per"
+	next "acchiapparlo?"
 	next "1. 3  2. 4  3. 5"
 	next "@"
 	
 .question8Text
-	db   "How many SLOWPOKE"
-	next "were in the cave"
-	next "when you rescued"
-	next "them at SLOWPOKE"
-	next "WELL?"
+	db   "Quanti SLOWPOKE"
+	next "c'erano nella"
+	next "grotta al POZZO"
+	next "SLOWPOKE quando"
+	next "li hai salvati?"
 	next "1. 2  2. 3  3. 4"
 	next "@"
 	
 .question9Text
-	db   "Which stop is the"
-	next "sea on the GUIDE"
-	next "GENT's tour around"
-	next "CHERRYGROVE CITY?"
-	next "1. 3rd  2. 4th "
-	next "3. 5th"
+	db   "A che fermata è il"
+	next "mare durante il"
+	next "tour della GUIDA"
+	next "di FIORPESCOPOLI?"
+	next "1. 3º  2. 4º "
+	next "3. 5º"
 	next "@"
 	
 .question10Text
-	db   "Which of these"
-	next "foreign items is"
-	next "not found in MR."
-	next "#MON's HOUSE?"
-	next "1. COIN  2. STAMP"
-	next "3. MAGAZINE"
+	db   "Quali oggetto"
+	next "non è nella CASA"
+	next "di MR. #MON?"
+	next "1. GETTONE"
+	next "2. FRANCOBOLLO"
+	next "3. RIVISTA"
 	next "@"
 
 
@@ -628,7 +632,7 @@ QuizScoreEvaluationScreen: ; $0677
 	end
 	
 .menuItemText
-	db "PROF.OAK's REPORT@"
+	db "RAPPORTO DI OAK@"
 	
 .menuItemScript
 	cmpval wQuizScore, .scorelow, .scorelow, .greater, $01, $05
@@ -674,63 +678,64 @@ QuizScoreEvaluationScreen: ; $0677
 	end
 
 .menuItemDescription
-	db   "Take the quiz to"
-	line "receive a rating!@"
+	db   "Fai il quiz per"
+	line "una valutazione!@"
 
 .textScoreLow
-	text "It's not enough to"
-	line "memorize things."
+	text "Imparare a memoria"
+	line "non basta."
 
-	para "#MANIACs can"
-	line "memorize things"
-	cont "they don't even"
-	cont "need to remember!"
+	para "I #FANATICI"
+	line "memorizzano cose"
+	para "che non hanno"
+	line "nemmeno bisogno"
+	cont "di ricordare!"
 	done
 
 .textScoreAverage
-	text "You still have"
-	line "lots to do."
+	text "Hai ancora"
+	line "molto da fare."
 
-	cont "#MANIACs have a"
-	cont "lot more passion!"
+	para "I #FANATICI"
+	line "hanno molta più"
+	cont "passione!"
 
-	para "Be sure to look in"
-	line "every nook and"
-	cont "cranny!"
+	para "Assicurati di"
+	line "guardare in ogni"
+	cont "angolo!"
 	done
 
 .textScoreGood
-	text "You're trying--I"
-	line "can see that."
+	text "Ti impegni, si"
+	line "vede."
 	
-	para "You're really"
-	line "starting to earn"	
-	cont "the title of" 
-	cont "#MANIAC!"
+	para "Stai tentando"
+	line "di diventare un"
+	cont "#FANATICO."
 
-	para "Are you talking"
-	line  "with your friends?"
-	
-	para "It's tough to" 
-	line "do this alone!"
+	para "Stai parlando"
+	line "coi tuoi amici?"
+
+	para "È dura farcela"
+	line "da soli!"
 	done
 
 .textScoreGreat
-	text "Excellent! You"
-	line "really like to"
+	text "Eccellente! Ti"
+	line "piace proprio"
 	
-	para "poke around in"
-	line "those nooks and"
-	cont "crannies, don't"
-	cont "you?"
+	para "ficcare il naso"
+	line "dappertutto!"
 	done
 
 .textScoreBest
-	text "Whoa! A perfect"
-	line "#MANIAC! I've"
+	text "Ma questo è un"
+	line "#FANATICO"
+	cont "perfetto!"
 
-	para "dreamt about this!"
-	line "Congratulations!"
+	para "È sempre stato il"
+	line "mio sogno."
+	cont "Complimenti!"
 	done
 
 
@@ -756,7 +761,7 @@ TrainerRankingsScreen: ; $0857
 	
 	db $01 ; number of strings to draw
 	dw $0029 ; offset into screen buffer
-	db "TRAINER RANKINGS@" ; string
+	db "CLASSIFICA ALLEN.@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -812,16 +817,16 @@ TrainerRankingsScreen: ; $0857
 	end
 
 .menuItemViewRankingsText
-	db "VIEW RANKINGS@"
+	db "VEDI CLASSIFICHE@"
 
 .menuItemUpdateRankingsText
-	db "UPDATE RANKINGS@"
+	db "AGG. CLASSIFICHE@"
 
 .menuItemRankingsDescriptionText
-	db "RANKING INFO@"
+	db "INFO CLASSIFICA@"
 	
 .menuItemReturnText
-	db "CANCEL@"
+	db "ESCI@"
 
 .menuItemViewRankingsScript
 	cmpvalram sNewsId, $0C, sNewsIdBackup, .noRankingsData, .continueToCategoriesScreen, .noRankingsData
@@ -858,21 +863,22 @@ TrainerRankingsScreen: ; $0857
 	end
 
 .rankingsUpdatedText
-	text "Rankings update"
-	line "was successful!"
+	text "Classifiche"
+	line "aggiornate!"
 	done
 
 .rankingsUpdateCancelledText
-	text "Rankings update"
-	line "was stopped."
+	text "Aggiornam. classi-"
+	line "fiche interrotto."
 	done
 
 .rankingsUpdateFailedText
-	text "Rankings update"
-	line "has failed…"
+	text "Aggiornamento"
+	line "classifiche…"
+	cont "fallito…"
 
-	para "Please download"
-	line "the latest NEWS."
+	para "Riscarica le"
+	line "NOTIZIE."
 	done
 
 .menuItemRankingsDescriptionScript
@@ -886,61 +892,62 @@ TrainerRankingsScreen: ; $0857
 	end
 
 .rankingsDescriptionText
-	text "BATTLE TOWER"
+	text "TORRE LOTTA"
 	line ""
 	
-	para "The number of"
-	line "#MON battles"
-	cont "won against other"
-	cont "<TRAINER>S at the"
-	cont "BATTLE TOWER on"
-	cont "ROUTE 40."
+	para "Il numero di lotte"
+	line "#MON vinte"
+	cont "contro gli"
+	cont "ALLENATORI di"
+	cont "livello 40 alla"
+	cont "TORRE LOTTA."
 
-	para "LARGEST MAGIKARP"
-	line ""
+	para "IL MAGIKARP PIÙ"
+	line "GROSSO"
+	cont ""
 	
-	para "The size of the"
-	line "largest MAGIKARP"
-	cont "measured by the"
-	cont "FISHING GURU at"
-	cont "the LAKE OF RAGE."
+	para "Le dimensioni del"
+	line "MAGIKARP più"
+	cont "grosso GURU"
+	cont "PESCATORE al"
+	cont "LAGO D'IRA."
 
-	para "BUG-CATCHING"
+	para "GARA PIGLIAMOSCHE"
 	line ""
 	
-	para "The highest score"
-	line "obtained at the"
-	cont "BUG-CATCHING Con-"
-	cont "test held in the"
-	cont "NATIONAL PARK."
+	para "il punteggio più"
+	line "alto ottenuto alla"
+	cont "GARA PIGLIAMOSCHE"
+	cont "tenuta nel PARCO"
+	cont "NAZIONALE."
 	done
 
 .noRankingsDataText
-	text "There is no"
-	line "ranking data."
+	text "Dati classifiche"
+	line "assenti."
 	
-	para "Link to obtain" 
-	line "ranking data."
+	para "Collegati per" 
+	line "ottenere i dati."
 	
 	para ""
 	line ""	
 	done
 
 .menuItemViewRankingsDescription
-	db   "View the various"
-	line "rankings@"
+	db   "Guarda le varie"
+	line "classifiche@"
 
 .menuItemUpdateRankingsDescription
-	db   "Reload rankings to"
-	line "update your scores@"
+	db   "Ricarica classi-"
+	line "fiche e punteggi@"
 
 .menuItemRankingsDescriptionDescription
-	db   "An explanation of"
-	line "the ranking themes@"
+	db   "Spiegazione temi"
+	line "classifiche@"
 
 .menuItemReturnDescription
-	db   "Return to the"
-	line "first page@"
+	db   "Torna alla"
+	line "prima pagina@"
 
 
 TrainerRankingsCategoriesScreen: ; $0AF2
@@ -965,7 +972,7 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	
 	db $01 ; number of strings to draw
 	dw $0029 ; offset into screen buffer
-	db "TRAINER RANKINGS@" ; string
+	db "CLASSIFICA ALLEN.@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -1025,16 +1032,16 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	end
 	
 .menuItemBattleTowerWinsText
-	db "BATTLE TOWER@"
+	db "TORRE LOTTA@"
 	
 .menuItemBugCatchingContestHighScoreText
-	db "BUG-CATCHING@"
+	db "GARA PIGLIAMOSCHE@"
 	
 .menuItemLargestMagikarpText
-	db "LARGEST MAGIKARP@"
+	db "MAGIKARP PIÙ GR.@"
 	
 .menuItemReturnText
-	db "CANCEL@"
+	db "ESCI@"
 
 .menuItemBattleTowerWinsScript
 	setval wRankingsTable, $00
@@ -1055,8 +1062,8 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 	end
 
 .menuItemDescription
-	db   "Please choose a"
-	line "ranking to view@"
+	db   "Scegli quale"
+	line "classifica vedere.@"
 
 
 TrainerRankingsTypeScreen: ; $0BC4
@@ -1141,22 +1148,22 @@ TrainerRankingsTypeScreen: ; $0BC4
 	end
 
 .menuItemNationalRankingText
-	db "NATIONAL RANKINGS@"
+	db "CLASSIFICA NAZ.@"
 
 .menuItemPrefecturalRankingText
 	news_text_start
 	news_text_own_region_backup 0
 	news_text_end
-	db " RANKINGS@"
+	db " CLASSIFICA@"
 
 .menuItemZipCodeRankingText
 	news_text_start
 	news_text_own_zip_backup 3
 	news_text_end
-	db " RANKINGS@"
+	db " CLASSIFICA@"
 
 .menuItemReturnText
-	db "CANCEL@"
+	db "ESCI@"
 
 .menuItemNationalRankingScript
 	setval wRankingsType, $00
@@ -1183,17 +1190,17 @@ TrainerRankingsTypeScreen: ; $0BC4
 	end
 
 .menuItemDescription
-	db   "Choose an area to"
-	line "view the rankings@"
+	db   "Scegli dove ved-"
+	line "ere la classifica.@"
 
 .battleTowerWinsText
-	db "BATTLE TOWER@"
+	db "TORRE LOTTA@"
 
 .bugCatchingContestHighScoreText
-	db "BUG-CATCHING@"
+	db "GARA PIGLIAMOSCHE@"
 
 .largestMagikarpText
-	db "LARGEST MAGIKARP@"
+	db "MAGIKARP PIÙ GR.@"
 
 
 TrainerRankingsRankingsScreen: ; $0CBD
@@ -1338,10 +1345,11 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db "@"
 
 .ownRankText
-	news_text_start
+	db "GRADO di "
+	news_text_start	
 	news_text_own_name 0
-	news_text_end
-	db "'s RANK: @"
+	news_text_end	
+	db " :@"	
 
 .rankingsEntryScript
 	cmpvalram wcd22, $01, wcd5c, .somebodyRankedHere, .nobodyRankedHere, .nobodyRankedHere
@@ -1359,8 +1367,8 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	end
 
 .nobodyRankedHereText
-	db   "No one is"
-	next "ranked here."
+	db   "Nessun classi-"
+	next "ficato qui."
 	para "@"
 
 .ownRankScript
@@ -1390,17 +1398,18 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	end
 
 .giftText
-	text "For receiving a"
-	next "such a high rank,"
+	text "Per aver ricevuto"
+	next "un grado così"
+	next "alto,"
 
-	para "we have a nice"
-	line "gift for you."
-	cont "Enjoy!"
+	para "ecco un regalo"
+	line "per te."
+	cont "Buon divertimento!"
 	done
 
 .rankedPlayerInfoText
 	news_text_start
-	news_text_ranking_gender 11, 4
+	news_text_ranking_gender 11, 8
 	news_text_ranking_number 10, 1, 3, 4, 0, 0
 	news_text_end
 	db ""
@@ -1418,58 +1427,60 @@ TrainerRankingsRankingsScreen: ; $0CBD
 .playerRankedText
 	news_text_start
 	news_text_switch 3, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
-	news_text_start
+	db "GRADO di "
+	news_text_start	
 	news_text_own_name 0
-	news_text_end
-	db "'s RANK is…"
-	para ""
+	news_text_end	
+	line "è…"	
+	para " "
 	news_text_start
 	news_text_number wOwnRank, 4, 4, 4, 0, 0
 	news_text_end
 	db   "!"
-	line "Congratulations!"
+	line "Complimenti!"
 	para "@"
 
 .playerNotRankedText
 	news_text_start
 	news_text_switch 3, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
-	news_text_start
+	db "GRADO di "
+	news_text_start	
 	news_text_own_name 0
-	news_text_end
-	db "'s RANK is…"
-	para "Not currently in"
-	line "the rankings."
+	news_text_end	
+	line "è…"	
+	para "Attualmente non"
+	line "in classifica."
 	para "@"
 	
 .ownBattleTowerWinsText
+	db "PUNTEG. di :"
 	news_text_start
 	news_text_own_name 0
-	news_text_end
-	db "'s SCORE:"
+	news_text_end	
 	line ""
 	news_text_start
 	news_text_number sNumBattleTowerWins, 2, 5, 5, 0, 0
 	news_text_end
-	db " points"
+	db " punti"
 	para "@"
 
 .ownBugCatchingContestHighScoreText
+	db "PUNTEG. di :"
 	news_text_start
 	news_text_own_name 0
-	news_text_end
-	db "'s SCORE:"
+	news_text_end	
 	line ""
 	news_text_start
 	news_text_number sBugContestHighscore, 2, 5, 5, 0, 0
 	news_text_end
-	db " points"
+	db " punti"
 	para "@"
 
 .ownLargestMagikarpText
+	db "PUNTEG. di :"
 	news_text_start
 	news_text_own_name 0
-	news_text_end
-	db "'s SCORE:"
+	news_text_end	
 	line ""
 	news_text_start
 	news_text_number sLargestMagikarp, 2 | PRINTNUM_LEADINGZEROS, 4, 5, 4, "<DOT>"
@@ -1479,20 +1490,20 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	
 
 .menuItemDescription
-	db   "View the profile"
-	line "of this TRAINER.@"
+	db   "Guarda il profilo"
+	line "di questo ALLEN.@"
 
 .headerText1
-	db "BATTLE TOWER@"
+	db "TORRE LOTTA@"
 
 .headerText2
-	db "BUG-CATCHING@"
+	db "GARA PIGLIAMOSCHE@"
 
 .headerText3
-	db "LARGEST MAGIKARP@"
+	db "MAGIKARP PIÙ GR.@"
 
 .headerText4
-	db "NATIONAL TOP 10!@"
+	db "TOP 10 NAZIONALE@"
 
 .headerText5
 	news_text_start

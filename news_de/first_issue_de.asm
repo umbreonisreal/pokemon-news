@@ -26,7 +26,7 @@ NewsRootScreen: ; $0006
 	
 	db $01 ; number of strings to draw
 	dw $0029 ; offset into screen buffer
-	db "PKMN-DATEN Nr. 1@" ; string
+	db "NACHRICHTEN Nr. 1@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -82,7 +82,7 @@ NewsRootScreen: ; $0006
 	end
 
 .menuItemNewsGuideText
-	db "DATEN-INFO@"
+	db "NACHRICHTEN-INFO@"
 
 .menuItemTrainerRankingsText
 	db "BESTENLISTE@"
@@ -134,7 +134,7 @@ NewsRootScreen: ; $0006
 
 .menuItemNewsGuideDescription
 	db   "Eine Erklärung zu"
-	line "den DATEN.@"
+	line "den NACHRICHTEN.@"
 
 .menuItemTrainerRankingsDescription
 	db   "Dreifache Trainer-"
@@ -145,8 +145,8 @@ NewsRootScreen: ; $0006
 	line "an dein Abenteuer?@"
 
 .menuItemQuitDescription
-	db   "Das Lesen der"
-	line "DATEN beenden.@"
+	db   "Lesen der NACH-"
+	line "RICHTEN beenden.@"
 
 
 PokemonQuizScreen: ; $0172
@@ -878,8 +878,8 @@ TrainerRankingsScreen: ; $0857
 	text "Die Übertragung"
 	line "schlug fehl…"
 
-	para "Bitte lade die"
-	line "DATEN erneut."
+	para "Die NACHRICHTEN"
+	line "bitte neu laden."
 	done
 
 .menuItemRankingsDescriptionScript
@@ -1379,17 +1379,17 @@ TrainerRankingsRankingsScreen: ; $0CBD
 .playerRanked
 	cleartext $0105, $12, $04
 	specialtext $0119, .playerRankedText
-	cmpval wOwnRank, .doNothing, .checkGSBallEnabled, .doNothing, $04, $00, $00, $00, $01
+	cmpval wOwnRank, .doNothing, .doNothing, .doNothing, $04, $00, $00, $00, $01
 
-.checkGSBallEnabled
-	cmpval sMobileEventIndex, .doNothing, .enableGSBall, .doNothing, $01, $00
-
-.enableGSBall
-	setval wcd6a, $01
-	cpyvalram wcd6a, sMobileEventIndex, $0001
-	cleartext $0105, $12, $04
-	printtext $0119, .giftText
-	menureturn
+;.checkGSBallEnabled
+;	cmpval sMobileEventIndex, .doNothing, .enableGSBall, .doNothing, $01, $00
+;
+;.enableGSBall
+;	setval wcd6a, $01
+;	cpyvalram wcd6a, sMobileEventIndex, $0001
+;	cleartext $0105, $12, $04
+;	printtext $0119, .giftText
+;	menureturn
 
 .doNothing
 	end
