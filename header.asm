@@ -6,6 +6,15 @@ INCLUDE "ram/sram_int.asm"
 ELIF DEF(_NEWS_DE)
 INCLUDE "ram/wram_int.asm"
 INCLUDE "ram/sram_int.asm"
+ELIF DEF(_NEWS_ES)
+INCLUDE "ram/wram_int.asm"
+INCLUDE "ram/sram_int.asm"
+ELIF DEF(_NEWS_FR)
+INCLUDE "ram/wram_int.asm"
+INCLUDE "ram/sram_int.asm"
+ELIF DEF(_NEWS_IT)
+INCLUDE "ram/wram_int.asm"
+INCLUDE "ram/sram_int.asm"
 ELSE
 INCLUDE "ram/wram.asm"
 INCLUDE "ram/sram.asm"
