@@ -242,7 +242,7 @@ PokemonQuizScreen: ; $0172
 	db "3. @"
 
 .menuItemQuitText
-	db "ENDE@"
+	db "ZUR.@"
 
 .menuItemAnswer1Script
 	incval wQuizQuestionNo, $01
