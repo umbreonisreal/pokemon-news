@@ -115,7 +115,7 @@ NewsRootScreen: ; $0006
 
 .newsGuideText
 	text "Ci auguriamo che"
-	line "la CLASS. ALLENATORI"
+	line "la CLASSIFICA"
 	para "ALLENATORI e il"
 	line "QUIZ #MANIA"
 	para "nella prima"
@@ -132,13 +132,12 @@ NewsRootScreen: ; $0006
 	done
 
 .menuItemNewsGuideDescription
-	db   "Leggi una spiega-"
-	line "zione delle@"
-	cont "NOTIZIE."
+	db   "Leggi la spiegazi-"
+	line "one delle NOTIZIE.@"
 
 .menuItemTrainerRankingsDescription
 	db   "Classifiche allen-"
-	line "atore a tema @"
+	line "atore a tema.@"
 
 .menuItemPokemonQuizDescription
 	db   "Test your memory"
@@ -490,8 +489,7 @@ PokemonQuizScreen: ; $0172
 .question1Text
 	db   "Chi c'era nella"
     next "#BALL centrale"
-    next "del LABORATORIO"
-	next "del PROF.ELM?"
+    next "dal PROF.ELM?"
     next "1. TOTODILE"
     next "2. CYNDAQUIL"
     next "3. CHIKORITA"
@@ -596,10 +594,10 @@ QuizScoreEvaluationScreen: ; $0677
 	db $00, $00 ; offset into screen buffer
 	db "@" ; string
 	
-	db $02, $0A ; menu x, y ; $04, $0A ; Needs to be updated with PROF.OAK's REPORT
+	db $03, $0A ; menu x, y ; $04, $0A ; Needs to be updated with PROF.OAK's REPORT
 	db $01, $01 ; number of columns, rows
 	db $00, $00 ; column width, row height
-	db $01, $00, $00, $00, $02, $01 ; $03, $00, $00, $00, $02, $01 PROF OAK's REPORT location
+	db $02, $00, $00, $00, $02, $01 ; $03, $00, $00, $00, $02, $01 PROF OAK's REPORT location
 	
 	relativepointer .aButton ; script pointer a button
 	relativepointer .aButton ; script pointer b button
@@ -904,7 +902,6 @@ TrainerRankingsScreen: ; $0857
 
 	para "IL MAGIKARP PIÙ"
 	line "GROSSO"
-	cont ""
 	
 	para "Le dimensioni del"
 	line "MAGIKARP più"
@@ -1345,11 +1342,11 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	db "@"
 
 .ownRankText
-	db "GRADO di "
-	news_text_start	
+	db "GRADO di :"
+	news_text_start
 	news_text_own_name 0
-	news_text_end	
-	db " :@"	
+	news_text_end
+	line "@"
 
 .rankingsEntryScript
 	cmpvalram wcd22, $01, wcd5c, .somebodyRankedHere, .nobodyRankedHere, .nobodyRankedHere
@@ -1428,10 +1425,10 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	news_text_start
 	news_text_switch 3, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
 	db "GRADO di "
-	news_text_start	
+	news_text_start
 	news_text_own_name 0
 	news_text_end	
-	line "è…"	
+	line "è…"
 	para " "
 	news_text_start
 	news_text_number wOwnRank, 4, 4, 4, 0, 0
@@ -1444,19 +1441,21 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	news_text_start
 	news_text_switch 3, wRankingsCategory, .ownBattleTowerWinsText, .ownBugCatchingContestHighScoreText, .ownLargestMagikarpText
 	db "GRADO di "
-	news_text_start	
+	news_text_start
 	news_text_own_name 0
 	news_text_end	
-	line "è…"	
+	line "è…"
+	
 	para "Attualmente non"
 	line "in classifica."
 	para "@"
 	
 .ownBattleTowerWinsText
-	db "PUNTEG. di :"
+	db "PUNTEG. di "
 	news_text_start
 	news_text_own_name 0
-	news_text_end	
+	news_text_end
+	db ":"
 	line ""
 	news_text_start
 	news_text_number sNumBattleTowerWins, 2, 5, 5, 0, 0
@@ -1465,10 +1464,11 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	para "@"
 
 .ownBugCatchingContestHighScoreText
-	db "PUNTEG. di :"
+	db "PUNTEG. di "
 	news_text_start
 	news_text_own_name 0
-	news_text_end	
+	news_text_end
+	db ":"
 	line ""
 	news_text_start
 	news_text_number sBugContestHighscore, 2, 5, 5, 0, 0
@@ -1477,10 +1477,11 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	para "@"
 
 .ownLargestMagikarpText
-	db "PUNTEG. di :"
+	db "PUNTEG. di "
 	news_text_start
 	news_text_own_name 0
-	news_text_end	
+	news_text_end
+	db ":"
 	line ""
 	news_text_start
 	news_text_number sLargestMagikarp, 2 | PRINTNUM_LEADINGZEROS, 4, 5, 4, "<DOT>"

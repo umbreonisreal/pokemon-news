@@ -633,7 +633,7 @@ QuizScoreEvaluationScreen: ; $0677
 	end
 	
 .menuItemText
-	db "RAPPORT de CHEN@"
+	db "RAPPORT DE CHEN@"
 	
 .menuItemScript
 	cmpval wQuizScore, .scorelow, .scorelow, .greater, $01, $05
@@ -1465,7 +1465,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	news_text_start
 	news_text_own_name 0
 	news_text_end	
-	db " :"
+	db ":"
 	line ""
 	news_text_start
 	news_text_number sNumBattleTowerWins, 2, 5, 5, 0, 0
@@ -1478,7 +1478,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	news_text_start
 	news_text_own_name 0
 	news_text_end	
-	db " :"	
+	db ":"	
 	line ""
 	news_text_start
 	news_text_number sBugContestHighscore, 2, 5, 5, 0, 0
@@ -1491,7 +1491,7 @@ TrainerRankingsRankingsScreen: ; $0CBD
 	news_text_start
 	news_text_own_name 0
 	news_text_end	
-	db " :"	
+	db ":"	
 	line ""
 	news_text_start
 	news_text_number sLargestMagikarp, 2 | PRINTNUM_LEADINGZEROS, 4, 5, 4, "<DOT>"
