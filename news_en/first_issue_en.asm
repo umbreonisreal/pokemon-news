@@ -130,7 +130,7 @@ NewsRootScreen: ; $0006
 
 .menuItemNewsGuideDescription
 	db   "Read an explan-"
-	line "ation of the NEWS@"
+	line "ation of the NEWS.@"
 
 .menuItemTrainerRankingsDescription
 	db   "Triple-theme"
@@ -928,19 +928,19 @@ TrainerRankingsScreen: ; $0857
 
 .menuItemViewRankingsDescription
 	db   "View the various"
-	line "rankings@"
+	line "rankings.@"
 
 .menuItemUpdateRankingsDescription
 	db   "Reload rankings to"
-	line "update your scores@"
+	line "update your score.@"
 
 .menuItemRankingsDescriptionDescription
 	db   "An explanation of"
-	line "the ranking themes@"
+	line "ranking themes.@"
 
 .menuItemReturnDescription
 	db   "Return to the"
-	line "first page@"
+	line "first page.@"
 
 
 TrainerRankingsCategoriesScreen: ; $0AF2
@@ -1056,7 +1056,7 @@ TrainerRankingsCategoriesScreen: ; $0AF2
 
 .menuItemDescription
 	db   "Please choose a"
-	line "ranking to view@"
+	line "ranking to view.@"
 
 
 TrainerRankingsTypeScreen: ; $0BC4
@@ -1184,7 +1184,7 @@ TrainerRankingsTypeScreen: ; $0BC4
 
 .menuItemDescription
 	db   "Choose an area to"
-	line "view the rankings@"
+	line "view the rankings.@"
 
 .battleTowerWinsText
 	db "BATTLE TOWER@"

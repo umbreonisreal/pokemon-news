@@ -932,19 +932,19 @@ TrainerRankingsScreen: ; $0857
 
 .menuItemViewRankingsDescription
 	db   "Guarda le varie"
-	line "classifiche@"
+	line "classifiche.@"
 
 .menuItemUpdateRankingsDescription
 	db   "Ricarica classi-"
-	line "fiche e punteggi@"
+	line "fiche e punteggi.@"
 
 .menuItemRankingsDescriptionDescription
 	db   "Spiegazione temi"
-	line "classifiche@"
+	line "classifiche.@"
 
 .menuItemReturnDescription
 	db   "Torna alla"
-	line "prima pagina@"
+	line "prima pagina.@"
 
 
 TrainerRankingsCategoriesScreen: ; $0AF2

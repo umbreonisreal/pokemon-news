@@ -135,7 +135,7 @@ NewsRootScreen: ; $0006
 
 .menuItemNewsGuideDescription
 	db "Lire les explica-"
-	line "tions des INFOS@"
+	line "tions des INFOS.@"
 
 .menuItemTrainerRankingsDescription
 	db "Classement des"
@@ -944,19 +944,19 @@ TrainerRankingsScreen: ; $0857
 
 .menuItemViewRankingsDescription
 	db   "Voir les diffé-"
-	line "rents classements@"
+	line "rents classements.@"
 	
 .menuItemUpdateRankingsDescription
 	db   "MàJ du classement"
-	line "et de vos scores@"
+	line "et de vos scores.@"
 
 .menuItemRankingsDescriptionDescription
 	db   "Infos sur les thé-"
-	line "mes de classement@"
+	line "mes de classement.@"
 
 .menuItemReturnDescription
 	db  "Retourner à la"
-	line "première page@"
+	line "première page.@"
 
 
 TrainerRankingsCategoriesScreen: ; $0AF2
@@ -1200,7 +1200,7 @@ TrainerRankingsTypeScreen: ; $0BC4
 
 .menuItemDescription
 	db   "Choisir la zone de"
-	line "classement à voir@"
+	line "classement à voir.@"
 
 .battleTowerWinsText
 	db "TOUR DE COMBAT@"
