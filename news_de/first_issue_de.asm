@@ -26,7 +26,7 @@ NewsRootScreen: ; $0006
 	
 	db $01 ; number of strings to draw
 	dw $0029 ; offset into screen buffer
-	db "PKMN-DATEN Nr. 1@" ; string
+	db "NACHRICHTEN Nr. 1@" ; string
 	
 	db $02, $05 ; menu x, y
 	db $01, $04 ; number of columns, rows
@@ -82,7 +82,7 @@ NewsRootScreen: ; $0006
 	end
 
 .menuItemNewsGuideText
-	db "DATEN-INFO@"
+	db "NACHRICHTEN-INFO@"
 
 .menuItemTrainerRankingsText
 	db "BESTENLISTE@"
@@ -134,7 +134,7 @@ NewsRootScreen: ; $0006
 
 .menuItemNewsGuideDescription
 	db   "Eine Erklärung zu"
-	line "den DATEN.@"
+	line "den NACHRICHTEN.@"
 
 .menuItemTrainerRankingsDescription
 	db   "Dreifache Trainer-"
@@ -145,8 +145,8 @@ NewsRootScreen: ; $0006
 	line "an dein Abenteuer?@"
 
 .menuItemQuitDescription
-	db   "Das Lesen der"
-	line "DATEN beenden.@"
+	db   "Lesen der NACH-"
+	line "RICHTEN beenden.@"
 
 
 PokemonQuizScreen: ; $0172
@@ -233,16 +233,16 @@ PokemonQuizScreen: ; $0172
 	end
 
 .menuItemAnswer1Text
-	db "A@@@"
+	db "1. @"
 
 .menuItemAnswer2Text
-	db "B@@@"
+	db "2. @"
 
 .menuItemAnswer3Text
-	db "C@@@"
+	db "3. @"
 
 .menuItemQuitText
-	db "ENDE@"
+	db "ZUR.@"
 
 .menuItemAnswer1Script
 	incval wQuizQuestionNo, $01
@@ -491,18 +491,18 @@ PokemonQuizScreen: ; $0172
 	db   "Wer befand sich im"
     next "mittleren #BALL"
     next "in LINDs LABOR?"
-    next "A: KARNIMANI"
-    next "B: FEURIGEL"
-    next "C: ENDIVIE"
+    next "1. KARNIMANI"
+    next "2. FEURIGEL"
+    next "3. ENDIVIE"
     next "@"
     
 .question2Text
     db   "Was befindet sich"
     next "im Mülleimer neben"
     next "PROF. LIND?"
-    next "A: ÜBERRESTE"
-    next "B: SAFTFLASCHE"
-    next "C: SNACK-FOLIE"
+    next "1. ÜBERRESTE"
+    next "2. SAFTFLASCHE"
+    next "3. SNACK-FOLIE"
     next "@"
     
 .question3Text
@@ -511,16 +511,16 @@ PokemonQuizScreen: ; $0172
     next "der dir das Fan-"
     next "gen von #MON"
     next "beigebracht hat?"
-    next "A: 1  B: 2  C: 3"
+    next "1. 1  2. 2  3. 3"
     next "@"
     
 .question4Text
     db   "Mamas Spezialität"
     next "heißt wie genau?"
     next "ZINNOBER-VULKAN-…"
-    next "A: BURGER"
-    next "B: CURRY"
-    next "C: NUDELN"
+    next "1. BURGER"
+    next "2. CURRY"
+    next "3. NUDELN"
     next "@"
     
 .question5Text
@@ -529,16 +529,16 @@ PokemonQuizScreen: ; $0172
     next "bevor er in die"
     next "#MON-AKADEMIE"
     next "ging?"
-    next "A: 5  B: 6  C: 7"
+    next "1. 5  2. 6  3. 7"
     next "@"
     
 .question6Text
     db   "Welches Item"
     next "gibt es nicht im"
     next "EINHEITSTUNNEL?"
-    next "A: X-ANGRIFF"
-    next "B: PARAHEILER"
-    next "C: TRANK"
+    next "1. X-ANGRIFF"
+    next "2. PARAHEILER"
+    next "3. TRANK"
     next "@"
 	
 .question7Text
@@ -547,7 +547,7 @@ PokemonQuizScreen: ; $0172
 	next "ansprechen, bevor"
 	next "man es fangen"
 	next "kann?"
-	next "A: 3  B: 4  C: 5"
+	next "1. 3  2. 4  3. 5"
 	next "@"
 	
 .question8Text
@@ -556,7 +556,7 @@ PokemonQuizScreen: ; $0172
 	next "FLEGMON-BRUNNEN"
 	next "als du sie ge-"
 	next "rettet hast?"
-	next "A: 2  B: 3  C: 4"
+	next "1. 2  2. 3  3. 4"
 	next "@"
 	
 .question9Text
@@ -565,16 +565,16 @@ PokemonQuizScreen: ; $0172
 	next "FREMDENFÜHRERS von"
 	next "ROSALIA CITY?"
 	next ""
-	next "A: 3. B: 4. C: 5."
+	next "1. 3. 2. 4. 3. 5."
 	next "@"
 	
 .question10Text
 	db   "Was findet man"
 	next "nicht im HAUS von"
 	next "MR. #MON?"
-	next "A: MÜNZE"
-	next "B: BRIEFMARKE"
-	next "C: HEFT"
+	next "1. MÜNZE"
+	next "2. BRIEFMARKE"
+	next "3. HEFT"
 	next "@"
 
 
@@ -878,8 +878,8 @@ TrainerRankingsScreen: ; $0857
 	text "Die Übertragung"
 	line "schlug fehl…"
 
-	para "Bitte lade die"
-	line "DATEN erneut."
+	para "Die NACHRICHTEN"
+	line "bitte neu laden."
 	done
 
 .menuItemRankingsDescriptionScript
